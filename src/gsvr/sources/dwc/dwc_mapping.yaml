@@ -1,0 +1,10 @@
+source: dwc
+transformations:
+  target: Variable
+  iri:
+    range: uri
+    identifier: true
+    target:
+      
+  label:
+  

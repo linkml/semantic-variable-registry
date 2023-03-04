@@ -1,0 +1,17 @@
+VariableGroup: class
+Variable: slot
+Primary:
+  - identifier
+  - vmap:
+      p: "true"
+Reqd_Qual:
+  - required
+  - vmap:
+      r: "true"
+Multiple:
+  - multivalued
+  - vmap:
+      "m": "true"
+      "1": "false"
+Description: description
+Explanation: comments

@@ -1,0 +1,187 @@
+Variable	Description	Range	Units	dataValue
+SITE_ID	Six character site identifier. MANDATORY if site is already registered	float	CC-Sss	
+SITE_NAME	Site name	string		
+SUBMISSION_CONTACT_NAME	Name of person who submitted this template	string		
+SUBMISSION_CONTACT_EMAIL	E-mail address of the person who submitted this template	string		
+SUBMISSION_DATE	Date this submission was last edited/modified	float	YYYYMMDD	
+SOIL_CHEM_C_ORG	Soil organic carbon concentration	float	g C kg soil-1	
+SOIL_CHEM_C_ORG_STATISTIC	Soil organic carbon concentration statistic	STATISTIC		
+SOIL_CHEM_C_ORG_STATISTIC_METHOD	Soil organic carbon concentration statistic method	STATISTIC_METHOD		
+SOIL_CHEM_C_ORG_STATISTIC_NUMBER	Number of observations used to determine soil organic carbon concentration statistic	integer		
+SOIL_CHEM_N_TOT	Soil total nitrogen concentration	float	g N kg soil-1	
+SOIL_CHEM_N_TOT_STATISTIC	Soil total nitrogen concentration statistic	STATISTIC		
+SOIL_CHEM_N_TOT_STATISTIC_METHOD	Soil total nitrogen concentration statistic method	STATISTIC_METHOD		
+SOIL_CHEM_N_TOT_STATISTIC_NUMBER	Number of observations used to determine soil total nitrogen concentration statistic	integer		
+SOIL_CHEM_NH4	Soil ammonium concentration	float	g NH4 kg soil-1	
+SOIL_CHEM_NH4_STATISTIC	Soil ammonium concentration statistic	STATISTIC		
+SOIL_CHEM_NH4_STATISTIC_METHOD	Soil ammonium concentration statistic method	STATISTIC_METHOD		
+SOIL_CHEM_NH4_STATISTIC_NUMBER	Number of observations used to determine soil ammonium concentration statistic	integer		
+SOIL_CHEM_NO3	Soil nitrate concentration	float	g NO3 kg soil-1	
+SOIL_CHEM_NO3_STATISTIC	Soil nitrate concentration statistic	STATISTIC		
+SOIL_CHEM_NO3_STATISTIC_METHOD	Soil nitrate concentration statistic method	STATISTIC_METHOD		
+SOIL_CHEM_NO3_STATISTIC_NUMBER	Number of observations used to determine soil nitrate concentration statistic	integer		
+SOIL_CHEM_K	Soil potassium concentration	float	g K kg soil-1	
+SOIL_CHEM_K_STATISTIC	Soil potassium concentration statistic	STATISTIC		
+SOIL_CHEM_K_STATISTIC_METHOD	Soil potassium concentration statistic method	STATISTIC_METHOD		
+SOIL_CHEM_K_STATISTIC_NUMBER	Number of observations used to determine soil potassium concentration statistic	integer		
+SOIL_CHEM_P	Soil phosphorus concentration	float	g P kg soil-1	
+SOIL_CHEM_P_STATISTIC	Soil phosphorus concentration statistic	STATISTIC		
+SOIL_CHEM_P_STATISTIC_METHOD	Soil phosphorus concentration statistic method	STATISTIC_METHOD		
+SOIL_CHEM_P_STATISTIC_NUMBER	Number of observations used to determine soil phosphorus concentration statistic	integer		
+SOIL_CHEM_CN_RATIO	Soil C/N ratio	float	% by mass	
+SOIL_CHEM_CN_RATIO_STATISTIC	Soil C/N ratio statistic	STATISTIC		
+SOIL_CHEM_CN_RATIO_STATISTIC_METHOD	Soil C/N ratio statistic method	STATISTIC_METHOD		
+SOIL_CHEM_CN_RATIO_STATISTIC_NUMBER	Number of observations used to determine soil C/N ratio statistic	integer		
+SOIL_CHEM_PH_SALT	Soil pH by CaCl2 or other salt	float	decimal number	
+SOIL_CHEM_PH_SALT_STATISTIC	Soil pH by CaCl2 or other salt statistic	STATISTIC		
+SOIL_CHEM_PH_SALT_STATISTIC_METHOD	Soil pH by CaCl2 or other salt statistic method	STATISTIC_METHOD		
+SOIL_CHEM_PH_SALT_STATISTIC_NUMBER	Number of observations used to determine soil pH by CaCl2 or other salt statistic	integer		
+SOIL_CHEM_PH_H2O	Soil pH by H2O	float	decimal number	
+SOIL_CHEM_PH_H2O_STATISTIC	Soil pH by H2O statistic	STATISTIC		
+SOIL_CHEM_PH_H2O_STATISTIC_METHOD	Soil pH by H2O statistic method	STATISTIC_METHOD		
+SOIL_CHEM_PH_H2O_STATISTIC_NUMBER	Number of observations used to determine soil pH by H2O statistic	integer		
+SOIL_CHEM_BD	Soil bulk density	float	g cm-3	
+SOIL_CHEM_BD_STATISTIC	Soil bulk density statistic	STATISTIC		
+SOIL_CHEM_BD_STATISTIC_METHOD	Soil bulk density statistic method	STATISTIC_METHOD		
+SOIL_CHEM_BD_STATISTIC_NUMBER	Number of observations used to determine soil bulk density statistic	integer		
+SOIL_CHEM_PROFILE_ZERO_REF	Soil chemistry profile zero reference	PROFILE_ZERO_REF		
+SOIL_CHEM_PROFILE_MIN	Soil chemistry profile minimum depth	float	cm	
+SOIL_CHEM_PROFILE_MAX	Soil chemistry profile maximum depth	float	cm	
+SOIL_CHEM_HORIZON	Soil chemistry profile horizon	string		
+SOIL_CHEM_APPROACH	Soil chemistry measurement approach	string		
+SOIL_CHEM_DATE	Soil chemistry measurement sampling date	float	YYYYMMDDHHMM	
+SOIL_CHEM_DATE_UNC	Uncertainty in the Soil chemistry measurement sampling date	float	days	
+SOIL_CHEM_COMMENT	Soil chemistry comments	string		
+SOIL_STOCK_C_ORG	Soil organic carbon stock	float	g C m-2	
+SOIL_STOCK_C_ORG_STATISTIC	Soil organic carbon stock statistic	STATISTIC		
+SOIL_STOCK_C_ORG_STATISTIC_METHOD	Soil organic carbon stock statistic method	STATISTIC_METHOD		
+SOIL_STOCK_C_ORG_STATISTIC_NUMBER	Number of observations used to determine soil organic carbon stock statistic	integer		
+SOIL_STOCK_N_TOT	Soil total nitrogen stock	float	g N m-2	
+SOIL_STOCK_N_TOT_STATISTIC	Soil total nitrogen stock statistic	STATISTIC		
+SOIL_STOCK_N_TOT_STATISTIC_METHOD	Soil total nitrogen stock statistic method	STATISTIC_METHOD		
+SOIL_STOCK_N_TOT_STATISTIC_NUMBER	Number of observations used to determine soil total nitrogen stock statistic	integer		
+SOIL_STOCK_NH4	Soil ammonium stock	float	g NH4 m-2	
+SOIL_STOCK_NH4_STATISTIC	Soil ammonium stock statistic	STATISTIC		
+SOIL_STOCK_NH4_STATISTIC_METHOD	Soil ammonium stock statistic method	STATISTIC_METHOD		
+SOIL_STOCK_NH4_STATISTIC_NUMBER	Number of observations used to determine soil ammonium stock statistic	integer		
+SOIL_STOCK_NO3	Soil nitrate stock	float	g NO3 m-2	
+SOIL_STOCK_NO3_STATISTIC	Soil nitrate stock statistic	STATISTIC		
+SOIL_STOCK_NO3_STATISTIC_METHOD	Soil nitrate stock statistic method	STATISTIC_METHOD		
+SOIL_STOCK_NO3_STATISTIC_NUMBER	Number of observations used to determine soil nitrate stock statistic	integer		
+SOIL_STOCK_K	Soil potassium stock	float	g K m-2	
+SOIL_STOCK_K_STATISTIC	Soil potassium stock statistic	STATISTIC		
+SOIL_STOCK_K_STATISTIC_METHOD	Soil potassium stock statistic method	STATISTIC_METHOD		
+SOIL_STOCK_K_STATISTIC_NUMBER	Number of observations used to determine soil potassium stock statistic	integer		
+SOIL_STOCK_P	Soil phosphorus stock	float	g P m-2	
+SOIL_STOCK_P_STATISTIC	Soil phosphorus stock statistic	STATISTIC		
+SOIL_STOCK_P_STATISTIC_METHOD	Soil phosphorus stock statistic method	STATISTIC_METHOD		
+SOIL_STOCK_P_STATISTIC_NUMBER	Number of observations used to determine soil phosphorus stock statistic	integer		
+SOIL_STOCK_PROFILE_ZERO_REF	Soil stock profile zero reference	PROFILE_ZERO_REF		
+SOIL_STOCK_PROFILE_MIN	Soil stock profile minimum depth	float	cm	
+SOIL_STOCK_PROFILE_MAX	Soil stock profile maximum depth	float	cm	
+SOIL_STOCK_HORIZON	Soil stock profile horizon	string		
+SOIL_STOCK_APPROACH	Soil stock measurement approach	string		
+SOIL_STOCK_DATE	Soil stock measurement sampling date	float	YYYYMMDDHHMM	
+SOIL_STOCK_DATE_UNC	Uncertainty in the Soil stock measurement sampling date	float	days	
+SOIL_STOCK_COMMENT	Soil stock comments	string		
+SOIL_TEX_SAND	Sand content	float	%	
+SOIL_TEX_SAND_STATISTIC	Sand content statistic	STATISTIC		
+SOIL_TEX_SAND_STATISTIC_METHOD	Sand content statistic method	STATISTIC_METHOD		
+SOIL_TEX_SAND_STATISTIC_NUMBER	Number of observations used to determine sand content statistic	integer		
+SOIL_TEX_SILT	Silt content	float	%	
+SOIL_TEX_SILT_STATISTIC	Silt content statistic	STATISTIC		
+SOIL_TEX_SILT_STATISTIC_METHOD	Silt content statistic method	STATISTIC_METHOD		
+SOIL_TEX_SILT_STATISTIC_NUMBER	Number of observations used to determine silt content statistic	integer		
+SOIL_TEX_CLAY	Clay content	float	%	
+SOIL_TEX_CLAY_STATISTIC	Clay content statistic	STATISTIC		
+SOIL_TEX_CLAY_STATISTIC_METHOD	Clay content statistic method	STATISTIC_METHOD		
+SOIL_TEX_CLAY_STATISTIC_NUMBER	Number of observations used to determine clay content statistic	integer		
+SOIL_TEX_ROCK	Rock content (>2mm)	float	%	
+SOIL_TEX_ROCK_STATISTIC	Rock content (>2mm) statistic	STATISTIC		
+SOIL_TEX_ROCK_STATISTIC_METHOD	Rock content (>2mm) statistic method	STATISTIC_METHOD		
+SOIL_TEX_ROCK_STATISTIC_NUMBER	Number of observations used to determine rock content (>2mm) statistic	integer		
+SOIL_TEX_WATER_HOLD_CAP	Soil water holding capacity	float	%vol	
+SOIL_TEX_WATER_HOLD_CAP_STATISTIC	Soil water holding capacity statistic	STATISTIC		
+SOIL_TEX_WATER_HOLD_CAP_STATISTIC_METHOD	Soil water holding capacity statistic method	STATISTIC_METHOD		
+SOIL_TEX_WATER_HOLD_CAP_STATISTIC_NUMBER	Number of observations used to determine soil water holding capacity statistic	integer		
+SOIL_TEX_WILT	Wilting point	float	%vol	
+SOIL_TEX_WILT_STATISTIC	Wilting point statistic	STATISTIC		
+SOIL_TEX_WILT_STATISTIC_METHOD	Wilting point statistic method	STATISTIC_METHOD		
+SOIL_TEX_WILT_STATISTIC_NUMBER	Number of observations used to determine wilting point statistic	integer		
+SOIL_TEX_SAT	Soil water saturation point	float	%vol	
+SOIL_TEX_SAT_STATISTIC	Soil water saturation point statistic	STATISTIC		
+SOIL_TEX_SAT_STATISTIC_METHOD	Soil water saturation point statistic method	STATISTIC_METHOD		
+SOIL_TEX_SAT_STATISTIC_NUMBER	Number of observations used to determine soil water saturation point statistic	integer		
+SOIL_TEX_FIELD_CAP	Field capacity	float	%vol	
+SOIL_TEX_FIELD_CAP_STATISTIC	Field capacity statistic	STATISTIC		
+SOIL_TEX_FIELD_CAP_STATISTIC_METHOD	Field capacity statistic method	STATISTIC_METHOD		
+SOIL_TEX_FIELD_CAP_STATISTIC_NUMBER	Number of observations used to determine field capacity statistic	integer		
+SOIL_TEX_PROFILE_ZERO_REF	Soil texture profile zero reference	PROFILE_ZERO_REF		
+SOIL_TEX_PROFILE_MIN	Soil texture profile minimum depth	float	cm	
+SOIL_TEX_PROFILE_MAX	Soil texture profile maximum depth	float	cm	
+SOIL_TEX_HORIZON	Soil texture profile horizon	string		
+SOIL_TEX_APPROACH	Soil texture measurement approach	string		
+SOIL_TEX_DATE	Soil texture measurement date	float	YYYYMMDDHHMM	
+SOIL_TEX_DATE_UNC	Uncertainty in the Soil texture measurement date	float	days	
+SOIL_TEX_COMMENT	Soil texture comments	string		
+PFCURVE_MP	Water retention (pF) curve matric potential	float	kPa	
+PFCURVE_MP_STATISTIC	Water retention (pF) curve matric potential statistic	STATISTIC		
+PFCURVE_MP_STATISTIC_METHOD	Water retention (pF) curve matric potential statistic method	STATISTIC_METHOD		
+PFCURVE_MP_STATISTIC_NUMBER	Number of observations used to determine water retention (pF) curve matric potential statistic	integer		
+PFCURVE_SWC	Water retention (pF) curve soil water content (SWC)	float	%	
+PFCURVE_SWC_STATISTIC	Water retention (pF) curve soil water content (SWC) statistic	STATISTIC		
+PFCURVE_SWC_STATISTIC_METHOD	Water retention (pF) curve soil water content (SWC) statistic method	STATISTIC_METHOD		
+PFCURVE_SWC_STATISTIC_NUMBER	Number of observations used to determine water retention (pF) curve soil water content (SWC) statistic	integer		
+PFCURVE_SWC_UNIT	Measurement unit of Water retention (pF) curve soil water content (SWC)	UNIT_SWC		
+PFCURVE_APPROACH	Water retention (pF) curve measurement approach	string		
+PFCURVE_DATE	Water retention (pF) curve measurement date	float	YYYYMMDDHHMM	
+PFCURVE_DATE_UNC	Uncertainty in the Water retention (pF) curve measurement date	float	days	
+PFCURVE_COMMENT	Water retention (pF) curve comments	string		
+WTD	Water table depth (not continuous measurements)	float	m	
+WTD_STATISTIC	Water table depth statistic	STATISTIC		
+WTD_STATISTIC_METHOD	Water table depth statistic method	STATISTIC_METHOD		
+WTD_STATISTIC_NUMBER	Number of observations used to determine water table depth statistic	integer		
+WTD_APPROACH	Water table depth measurement approach	string		
+WTD_DATE	Water table depth measurement date	float	YYYYMMDDHHMM	
+WTD_DATE_UNC	Uncertainty in the Water table depth measurement date	float	days	
+WTD_COMMENT	Water table depth comments	string		
+SWC	Soil water content (not continuous measurements)	float	%	
+SWC_STATISTIC	Soil water content statistic	STATISTIC		
+SWC_STATISTIC_METHOD	Soil water content statistic method	STATISTIC_METHOD		
+SWC_STATISTIC_NUMBER	Number of observations used to determine soil water content statistic	integer		
+SWC_UNIT	Measurement unit of Soil water content	UNIT_SWC		
+SWC_PROFILE_ZERO_REF	Soil water content profile zero reference	PROFILE_ZERO_REF		
+SWC_PROFILE_MIN	Soil water content profile minimum depth	float	cm	
+SWC_PROFILE_MAX	Soil water content profile maximum depth	float	cm	
+SWC_HORIZON	Soil water content horizon	string		
+SWC_APPROACH	Soil water content measurement approach	string		
+SWC_DATE	Soil water content measurement date	float	YYYYMMDDHHMM	
+SWC_DATE_START	Start date of Soil water content measurment	float	YYYYMMDDHHMM	
+SWC_DATE_END	End date of Soil water content measurement	float	YYYYMMDDHHMM	
+SWC_DATE_UNC	Uncertainty in the Date(s) of Soil water content measurement	float	days	
+SWC_COMMENT	Soil water content comments	string		
+SOIL_WRB_GROUP	Soil Group for tower site according to the Soil World Reference Base for Soil Resources (WRB)	SOIL_GROUP		
+SOIL_WRB_GROUP_APPROACH	Approach used for assigning Soil WRB Group	string		
+SOIL_WRB_GROUP_COMMENT	Soil WRB Group comments	string		
+SOIL_ORDER	Soil Order for tower site according to National Resource Conservation Service (NRCS) Soil Taxonomy	SOIL_ORDER		
+SOIL_ORDER_APPROACH	Approach used for assigning Soil Order	string		
+SOIL_ORDER_COMMENT	Soil Order comments	string		
+SOIL_CLASSIFICATION	Soil Classification for tower site according to a taxonomy	string		
+SOIL_CLASSIFICATION_TAXONOMY	Specify the taxonomy used for Soil Classification	SOIL_CLASS_TAXON		
+SOIL_CLASSIFICATION_APPROACH	Approach used for assigning Soil Classification	string		
+SOIL_CLASSIFICATION_COMMENT	Soil Classification comments	string		
+SOIL_SERIES	Soil Series for tower site according to a taxonomy	string		
+SOIL_SERIES_APPROACH	Approach used for assigning Soil Series	string		
+SOIL_SERIES_COMMENT	Soil Series comments	string		
+SOIL_DEPTH	Soil depth	float	cm	
+SOIL_DEPTH_STATISTIC	Soil depth statistic	STATISTIC		
+SOIL_DEPTH_STATISTIC_METHOD	Soil depth statistic method	STATISTIC_METHOD		
+SOIL_DEPTH_STATISTIC_NUMBER	Number of observations used to determine soil depth statistic	integer		
+SOIL_DEPTH_ORG	Soil depth of organic horizon	float	cm	
+SOIL_DEPTH_ORG_STATISTIC	Soil depth of organic horizon statistic	STATISTIC		
+SOIL_DEPTH_ORG_STATISTIC_METHOD	Soil depth of organic horizon statistic method	STATISTIC_METHOD		
+SOIL_DEPTH_ORG_STATISTIC_NUMBER	Number of observations used to determine soil depth of organic horizon statistic	integer		
+SOIL_DEPTH_APPROACH	Soil depth measurement approach	string		
+SOIL_DEPTH_DATE	Soil depth measurement date	float	YYYYMMDDHHMM	
+SOIL_DEPTH_DATE_UNC	Uncertainty in the Soil depth measurement date	float	days	
+SOIL_DEPTH_COMMENT	Soil depth comments	string		

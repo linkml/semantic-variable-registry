@@ -1,0 +1,37 @@
+{
+  "code": "physicochemical",
+  "description": "core physical and chemical measurement variables",
+  "variables": {
+    "salinity": {
+      "quantity_type": "SalinityQuantity",
+      "allowed_units": [
+        "psu",
+        "percentage"
+      ]
+    },
+    "methane_concentration": {
+      "quantity_type": "Amount",
+      "allowed_units": [
+        "psu",
+        "percentage"
+      ]
+    }
+  },
+  "quantity_types": {
+    "SalinityQuantity": {
+      "structured_mappings": [
+        {
+          "object_id": "PATO:0085001"
+        }
+      ]
+    },
+    "Amount": {
+      "structured_mappings": [
+        {
+          "object_id": "PATO:0000070"
+        }
+      ]
+    }
+  },
+  "@type": "dict"
+}

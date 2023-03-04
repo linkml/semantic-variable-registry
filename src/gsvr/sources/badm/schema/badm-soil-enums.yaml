@@ -1,0 +1,146 @@
+default_prefix: TEMP
+default_range: string
+enums:
+  PROFILE_ZERO_REF:
+    from_schema: TEMP
+    permissible_values:
+      Other:
+        description: See additional information in Approach / Comments
+      Top of mineral soil:
+        description: Top of mineral soil not including organic layers
+      Top of surface:
+        description: On top of all organic layers
+  SOIL_CLASS_TAXON:
+    from_schema: TEMP
+    permissible_values:
+      NRCS: {}
+      Other:
+        description: See additional information in Approach / Comments
+      WRB:
+        description: Previously FAO
+  SOIL_GROUP:
+    from_schema: TEMP
+    permissible_values:
+      Acrisol: {}
+      Albeluvisol: {}
+      Alisol: {}
+      Andosol: {}
+      Anthrosol: {}
+      Arenosol: {}
+      Calcisol: {}
+      Cambisol: {}
+      Chernozem: {}
+      Cryosol: {}
+      Durisol: {}
+      Ferralsol: {}
+      Fluvisol: {}
+      Gleysol: {}
+      Gypsisol: {}
+      Histosol: {}
+      Kastanozem: {}
+      Leptosol: {}
+      Lixisol: {}
+      Luvisol: {}
+      Nitisol: {}
+      Phaeozem: {}
+      Planosol: {}
+      Plinthosol: {}
+      Podzol: {}
+      Regosol: {}
+      Solonchak: {}
+      Solonetz: {}
+      Technosol: {}
+      Umbrisol: {}
+      Vertisol: {}
+  SOIL_ORDER:
+    from_schema: TEMP
+    permissible_values:
+      Alfisols: {}
+      Andisols: {}
+      Aridisols: {}
+      Entisols: {}
+      Gelisols: {}
+      Histosols: {}
+      Inceptisols: {}
+      Mollisols: {}
+      Oxisols: {}
+      Spodosols: {}
+      Ultisols: {}
+      Vertisols: {}
+  STATISTIC:
+    from_schema: TEMP
+    permissible_values:
+      10th Percentile:
+        description: Quantile at 10% of distribution
+      1st Percentile:
+        description: Quantile at 1% of distribution
+      25th Percentile:
+        description: Quantile at 25% of distribution
+      5th Percentile:
+        description: Quantile at 5% of distribution
+      75th Percentile:
+        description: Quantile at 75% of distribution
+      90th Percentile:
+        description: Quantile at 90% of distribution
+      95th Percentile:
+        description: Quantile at 95% of distribution
+      99th Percentile:
+        description: Quantile at 99% of distribution
+      Maximum:
+        description: Maximum value
+      Mean:
+        description: Average (mean) value of sample population
+      Measurement Uncertainty:
+        description: Report uncertainty as a plus or minus value in the measurement
+          units. For example, enter 1.5 for +/- 1.5 units. Uncertainty may be reported
+          from the instrument's specifications, determined empirically, or estimated
+          by the tower team. Please describe such details in Approach. For uncertainty
+          values that are better described by a range, a percent, or other, please
+          enter information in Comments.
+      Median - 50th Percentile:
+        description: Median - Quantile at 50% of distribution
+      Minimum:
+        description: Minimum value
+      Single observation:
+        description: Single observation that is not a calculated statistic of replicates
+          either to get a robust estimate or for spatial variability analysis. For
+          example a single biomass observation may be the vegetation harvested in
+          a single 1 x 1 meter area.
+      Standard Deviation:
+        description: Standard deviation may be reported from a sample population that
+          consists of individual or aggregated samples (observations). If the distinction
+          is important, specify in STATISTIC_METHOD or Comments.
+  STATISTIC_METHOD:
+    from_schema: TEMP
+    permissible_values:
+      Aggregate of individual observations:
+        description: The statistic is aggregated from individual observations located
+          within the site. Observations may be grouped into sample areas (e.g., plots)
+          within the site but those groupings are ignored. Statistics generated from
+          individual observations directly yield information on the site generally.
+          The statistic may represent spatial characteristics of the measurement within
+          the site (e.g., spatial heterogeneity) and/or characteristics due to other
+          factors (e.g., population variability).
+      Aggregate of sample aggregates:
+        description: The statistic is aggregated from aggregated individual observations
+          located in sample areas within the site. For example, individual observations
+          are made in 5 sample plots within a site. "Aggregate of sample aggregates"
+          is used if a plot statistic (e.g., Mean) is first calculated, and then the
+          plot values are aggregated to calculate the site statistic. Statistics generated
+          by this approach are often used to highlight the spatial characteristics
+          within the site (i.e., the spatial heterogeneity of measurement within the
+          site).
+      Expert estimate:
+        description: Estimate made by expert familiar with site
+  UNIT_SWC:
+    from_schema: TEMP
+    permissible_values:
+      Gravimetric: {}
+      Volumetric: {}
+id: TEMP
+imports:
+- linkml:types
+name: TEMP
+prefixes:
+  TEMP: https://example.org/TEMP/
+  linkml: https://w3id.org/linkml/

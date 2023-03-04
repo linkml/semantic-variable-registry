@@ -1,0 +1,172 @@
+code: environment.soil
+description: soil measurement variables
+measurables:
+  NH4:
+    name: NH4
+    structured_mappings:
+    - object_id: CHEBI:28938
+      object_label: ammonium
+      predicate_id: skos:closeMatch
+    title: ammonium
+  RegionOfSoil:
+    name: RegionOfSoil
+physical_substances:
+  Soil:
+    name: Soil
+    structured_mappings:
+    - object_id: ENVO:00001998
+      object_label: soil
+      predicate_id: owl:equivalentClass
+quantity_types:
+  Altitude:
+    name: Altitude
+    structured_mappings:
+    - object_id: PATO:0000119
+      object_label: height
+      predicate_id: skos:closeMatch
+  Depth:
+    name: Depth
+    structured_mappings:
+    - object_id: PATO:0001595
+      object_label: depth
+      predicate_id: owl:equivalentClass
+variables:
+  soil_altitude:
+    allowed_units:
+    - m
+    - km
+    description: soil altitude, general concept
+    name: soil_altitude
+    pid: c29pbF9hbHRpdHVkZQ==
+    subtypes: {}
+    variable_forms: {}
+  soil_altitude_unit_km:
+    name: soil_altitude_unit_km
+    pid: c29pbF9hbHRpdHVkZV91bml0X2tt
+    subtypes: {}
+    unit:
+      symbol: km
+      ucum_code: km
+    variable_forms: {}
+  soil_altitude_unit_m:
+    name: soil_altitude_unit_m
+    pid: c29pbF9hbHRpdHVkZV91bml0X20=
+    subtypes: {}
+    unit:
+      symbol: m
+      ucum_code: m
+    variable_forms: {}
+  soil_chemistry:
+    category: !!python/object/apply:gsvr.datamodel.metamodel.VariableCategoryEnum
+    - GROUPING
+    name: soil_chemistry
+    pid: c29pbF9jaGVtaXN0cnk=
+    subtypes: {}
+    variable_forms: {}
+  soil_classification:
+    category: !!python/object/apply:gsvr.datamodel.metamodel.VariableCategoryEnum
+    - CATEGORICAL
+    description: soil classification
+    embedded_value_set:
+      permissible_values:
+        Acrisol:
+          text: Acrisol
+        Albeluvisol:
+          text: Albeluvisol
+    name: soil_classification
+    pid: c29pbF9jbGFzc2lmaWNhdGlvbg==
+    subtypes: {}
+    variable_forms: {}
+  soil_concentration_nh4_method:
+    category: !!python/object/apply:gsvr.datamodel.metamodel.VariableCategoryEnum
+    - ANCILLARY
+    name: soil_concentration_nh4_method
+    pid: c29pbF9jb25jZW50cmF0aW9uX25oNF9tZXRob2Q=
+    subtypes: {}
+    variable_forms: {}
+  soil_concentration_nh4_unit_grams_per_kilogram:
+    denominator_variable: soil_volume_kg
+    description: Soil ammonium concentration
+    name: soil_concentration_nh4_unit_grams_per_kilogram
+    numerator_variable: soil_amount_nh4_unit_grams
+    pid: c29pbF9jb25jZW50cmF0aW9uX25oNF91bml0X2dyYW1zX3Blcl9raWxvZ3JhbQ==
+    quantification_of: NH4
+    structured_mappings:
+    - object_id: badm:SOIL_CHEM_NH4
+      predicate_id: skos:exactmatch
+    subtypes: {}
+    unit:
+      symbol: g NH4 kg soil-1
+      ucum_code: g/kg
+    variable_forms: {}
+  soil_depth:
+    allowed_units:
+    - m
+    - cm
+    - Inch
+    description: soil depth, general concept
+    name: soil_depth
+    pid: c29pbF9kZXB0aA==
+    quantity_type: Depth
+    subtypes: {}
+    variable_forms: {}
+  soil_depth_measurement:
+    name: soil_depth_measurement
+    pid: c29pbF9kZXB0aF9tZWFzdXJlbWVudA==
+    subtypes: {}
+    variable_forms: {}
+  soil_depth_measurement_verbatim:
+    name: soil_depth_measurement_verbatim
+    pid: c29pbF9kZXB0aF9tZWFzdXJlbWVudF92ZXJiYXRpbQ==
+    subtypes: {}
+    variable_forms: {}
+  soil_depth_unit_Inch:
+    name: soil_depth_unit_Inch
+    pid: c29pbF9kZXB0aF91bml0X0luY2g=
+    subtypes: {}
+    unit:
+      symbol: Inch
+      ucum_code: '[in_i]'
+    variable_forms: {}
+  soil_depth_unit_cm:
+    name: soil_depth_unit_cm
+    pid: c29pbF9kZXB0aF91bml0X2Nt
+    subtypes: {}
+    unit:
+      symbol: cm
+      ucum_code: cm
+    variable_forms: {}
+  soil_depth_unit_m:
+    description: test
+    name: soil_depth_unit_m
+    pid: c29pbF9kZXB0aF91bml0X20=
+    relationships:
+    - object: soil_depth
+      predicate: todo
+    subtypes: {}
+    unit:
+      symbol: m
+      ucum_code: m
+    variable_forms: {}
+  soil_ratio_carbon_to_nitrogen_method:
+    category: !!python/object/apply:gsvr.datamodel.metamodel.VariableCategoryEnum
+    - ANCILLARY
+    name: soil_ratio_carbon_to_nitrogen_method
+    pid: c29pbF9yYXRpb19jYXJib25fdG9fbml0cm9nZW5fbWV0aG9k
+    subtypes: {}
+    variable_forms: {}
+  soil_ratio_carbon_to_nitrogen_unit_percent:
+    denominator_variable: soil_amount_nitrogen
+    description: Soil carbon to nitrogen ratio
+    name: soil_ratio_carbon_to_nitrogen_unit_percent
+    numerator_variable: soil_amount_carbon
+    pid: c29pbF9yYXRpb19jYXJib25fdG9fbml0cm9nZW5fdW5pdF9wZXJjZW50
+    quantification_of: CarbonNitrogenMixture
+    structured_mappings:
+    - object_id: badm:SOIL_CHEM_CN_RATIO
+      predicate_id: skos:exactmatch
+    subtypes: {}
+    unit:
+      symbol: pct
+      ucum_code: '%'
+    variable_forms: {}

@@ -1,0 +1,7 @@
+Variable: slot
+Description: description
+Range: range
+Units:
+  - unit
+  - {inner_key: symbol}
+dataValue: ignore

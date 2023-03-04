@@ -1,0 +1,8 @@
+code: health.uncategorized
+variables:
+  FOO:
+    sources:
+    - some:cde1
+  BAR:
+    sources:
+    - some:cde2

@@ -1,0 +1,754 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/TEMP/GRPHEADER> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Site name" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path <https://example.org/TEMP/SITE_NAME> ],
+        [ sh:description "Name of person who submitted this template" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 2 ;
+            sh:path <https://example.org/TEMP/SUBMISSION_CONTACT_NAME> ],
+        [ sh:description "E-mail address of the person who submitted this template" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 3 ;
+            sh:path <https://example.org/TEMP/SUBMISSION_CONTACT_EMAIL> ],
+        [ sh:description "Six character site identifier. MANDATORY if site is already registered" ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://example.org/TEMP/SITE_ID> ],
+        [ sh:description "Date this submission was last edited/modified" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 4 ;
+            sh:path <https://example.org/TEMP/SUBMISSION_DATE> ] ;
+    sh:targetClass <https://example.org/TEMP/GRPHEADER> .
+
+<https://example.org/TEMP/GRPPFCURVE> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Water retention (pF) curve comments" ;
+            sh:order 12 ;
+            sh:path <https://example.org/TEMP/PFCURVE_COMMENT> ],
+        [ sh:description "Number of observations used to determine water retention (pF) curve matric potential statistic" ;
+            sh:order 3 ;
+            sh:path <https://example.org/TEMP/PFCURVE_MP_STATISTIC_NUMBER> ],
+        [ sh:description "Water retention (pF) curve soil water content (SWC) statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 6 ;
+            sh:path <https://example.org/TEMP/PFCURVE_SWC_STATISTIC_METHOD> ],
+        [ sh:description "Water retention (pF) curve matric potential statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 2 ;
+            sh:path <https://example.org/TEMP/PFCURVE_MP_STATISTIC_METHOD> ],
+        [ sh:description "Water retention (pF) curve soil water content (SWC)" ;
+            sh:minCount 1 ;
+            sh:order 4 ;
+            sh:path <https://example.org/TEMP/PFCURVE_SWC> ],
+        [ sh:description "Water retention (pF) curve matric potential" ;
+            sh:order 0 ;
+            sh:path <https://example.org/TEMP/PFCURVE_MP> ],
+        [ sh:description "Water retention (pF) curve soil water content (SWC) statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 5 ;
+            sh:path <https://example.org/TEMP/PFCURVE_SWC_STATISTIC> ],
+        [ sh:description "Number of observations used to determine water retention (pF) curve soil water content (SWC) statistic" ;
+            sh:order 7 ;
+            sh:path <https://example.org/TEMP/PFCURVE_SWC_STATISTIC_NUMBER> ],
+        [ sh:description "Water retention (pF) curve measurement approach" ;
+            sh:order 9 ;
+            sh:path <https://example.org/TEMP/PFCURVE_APPROACH> ],
+        [ sh:description "Uncertainty in the Water retention (pF) curve measurement date" ;
+            sh:order 11 ;
+            sh:path <https://example.org/TEMP/PFCURVE_DATE_UNC> ],
+        [ sh:description "Water retention (pF) curve measurement date" ;
+            sh:minCount 1 ;
+            sh:order 10 ;
+            sh:path <https://example.org/TEMP/PFCURVE_DATE> ],
+        [ sh:description "Measurement unit of Water retention (pF) curve soil water content (SWC)" ;
+            sh:in ( "Gravimetric" "Volumetric" ) ;
+            sh:minCount 1 ;
+            sh:order 8 ;
+            sh:path <https://example.org/TEMP/PFCURVE_SWC_UNIT> ],
+        [ sh:description "Water retention (pF) curve matric potential statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path <https://example.org/TEMP/PFCURVE_MP_STATISTIC> ] ;
+    sh:targetClass <https://example.org/TEMP/GRPPFCURVE> .
+
+<https://example.org/TEMP/GRPSOILCHEM> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Soil chemistry measurement approach" ;
+            sh:order 44 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_APPROACH> ],
+        [ sh:description "Soil phosphorus concentration statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 21 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_P_STATISTIC> ],
+        [ sh:description "Soil ammonium concentration" ;
+            sh:order 8 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_NH4> ],
+        [ sh:description "Soil organic carbon concentration statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_C_ORG_STATISTIC> ],
+        [ sh:description "Soil pH by H2O" ;
+            sh:order 32 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_PH_H2O> ],
+        [ sh:description "Soil pH by CaCl2 or other salt" ;
+            sh:order 28 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_PH_SALT> ],
+        [ sh:description "Soil pH by H2O statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 33 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_PH_H2O_STATISTIC> ],
+        [ sh:description "Soil chemistry profile zero reference" ;
+            sh:in ( "Other" "Top of mineral soil" "Top of surface" ) ;
+            sh:order 40 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_PROFILE_ZERO_REF> ],
+        [ sh:description "Number of observations used to determine soil pH by H2O statistic" ;
+            sh:order 35 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_PH_H2O_STATISTIC_NUMBER> ],
+        [ sh:description "Soil chemistry measurement sampling date" ;
+            sh:minCount 1 ;
+            sh:order 45 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_DATE> ],
+        [ sh:description "Soil nitrate concentration" ;
+            sh:order 12 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_NO3> ],
+        [ sh:description "Number of observations used to determine soil pH by CaCl2 or other salt statistic" ;
+            sh:order 31 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_PH_SALT_STATISTIC_NUMBER> ],
+        [ sh:description "Soil bulk density statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 37 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_BD_STATISTIC> ],
+        [ sh:description "Soil C/N ratio" ;
+            sh:order 24 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_CN_RATIO> ],
+        [ sh:description "Soil chemistry profile maximum depth" ;
+            sh:order 42 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_PROFILE_MAX> ],
+        [ sh:description "Soil ammonium concentration statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 9 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_NH4_STATISTIC> ],
+        [ sh:description "Soil nitrate concentration statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 13 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_NO3_STATISTIC> ],
+        [ sh:description "Soil phosphorus concentration" ;
+            sh:order 20 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_P> ],
+        [ sh:description "Soil C/N ratio statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 26 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_CN_RATIO_STATISTIC_METHOD> ],
+        [ sh:description "Soil total nitrogen concentration statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 6 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_N_TOT_STATISTIC_METHOD> ],
+        [ sh:description "Soil total nitrogen concentration" ;
+            sh:order 4 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_N_TOT> ],
+        [ sh:description "Number of observations used to determine soil ammonium concentration statistic" ;
+            sh:order 11 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_NH4_STATISTIC_NUMBER> ],
+        [ sh:description "Soil bulk density" ;
+            sh:order 36 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_BD> ],
+        [ sh:description "Soil potassium concentration" ;
+            sh:order 16 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_K> ],
+        [ sh:description "Number of observations used to determine soil nitrate concentration statistic" ;
+            sh:order 15 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_NO3_STATISTIC_NUMBER> ],
+        [ sh:description "Soil pH by CaCl2 or other salt statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 30 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_PH_SALT_STATISTIC_METHOD> ],
+        [ sh:description "Number of observations used to determine soil phosphorus concentration statistic" ;
+            sh:order 23 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_P_STATISTIC_NUMBER> ],
+        [ sh:description "Number of observations used to determine soil C/N ratio statistic" ;
+            sh:order 27 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_CN_RATIO_STATISTIC_NUMBER> ],
+        [ sh:description "Soil organic carbon concentration" ;
+            sh:order 0 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_C_ORG> ],
+        [ sh:description "Soil chemistry profile minimum depth" ;
+            sh:order 41 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_PROFILE_MIN> ],
+        [ sh:description "Soil C/N ratio statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 25 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_CN_RATIO_STATISTIC> ],
+        [ sh:description "Number of observations used to determine soil total nitrogen concentration statistic" ;
+            sh:order 7 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_N_TOT_STATISTIC_NUMBER> ],
+        [ sh:description "Number of observations used to determine soil organic carbon concentration statistic" ;
+            sh:order 3 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_C_ORG_STATISTIC_NUMBER> ],
+        [ sh:description "Soil ammonium concentration statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 10 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_NH4_STATISTIC_METHOD> ],
+        [ sh:description "Soil potassium concentration statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 17 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_K_STATISTIC> ],
+        [ sh:description "Soil chemistry comments" ;
+            sh:order 47 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_COMMENT> ],
+        [ sh:description "Soil pH by CaCl2 or other salt statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 29 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_PH_SALT_STATISTIC> ],
+        [ sh:description "Number of observations used to determine soil bulk density statistic" ;
+            sh:order 39 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_BD_STATISTIC_NUMBER> ],
+        [ sh:description "Soil pH by H2O statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 34 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_PH_H2O_STATISTIC_METHOD> ],
+        [ sh:description "Uncertainty in the Soil chemistry measurement sampling date" ;
+            sh:order 46 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_DATE_UNC> ],
+        [ sh:description "Soil bulk density statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 38 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_BD_STATISTIC_METHOD> ],
+        [ sh:description "Soil organic carbon concentration statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 2 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_C_ORG_STATISTIC_METHOD> ],
+        [ sh:description "Soil total nitrogen concentration statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 5 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_N_TOT_STATISTIC> ],
+        [ sh:description "Number of observations used to determine soil potassium concentration statistic" ;
+            sh:order 19 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_K_STATISTIC_NUMBER> ],
+        [ sh:description "Soil nitrate concentration statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 14 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_NO3_STATISTIC_METHOD> ],
+        [ sh:description "Soil chemistry profile horizon" ;
+            sh:order 43 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_HORIZON> ],
+        [ sh:description "Soil phosphorus concentration statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 22 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_P_STATISTIC_METHOD> ],
+        [ sh:description "Soil potassium concentration statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 18 ;
+            sh:path <https://example.org/TEMP/SOIL_CHEM_K_STATISTIC_METHOD> ] ;
+    sh:targetClass <https://example.org/TEMP/GRPSOILCHEM> .
+
+<https://example.org/TEMP/GRPSOILCLASSIFICATION> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Soil Classification comments" ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path <https://example.org/TEMP/SOIL_CLASSIFICATION_COMMENT> ],
+        [ sh:description "Soil Classification for tower site according to a taxonomy" ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://example.org/TEMP/SOIL_CLASSIFICATION> ],
+        [ sh:description "Approach used for assigning Soil Classification" ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://example.org/TEMP/SOIL_CLASSIFICATION_APPROACH> ],
+        [ sh:description "Specify the taxonomy used for Soil Classification" ;
+            sh:in ( "NRCS" "Other" "WRB" ) ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://example.org/TEMP/SOIL_CLASSIFICATION_TAXONOMY> ] ;
+    sh:targetClass <https://example.org/TEMP/GRPSOILCLASSIFICATION> .
+
+<https://example.org/TEMP/GRPSOILDEPTH> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Soil depth statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 2 ;
+            sh:path <https://example.org/TEMP/SOIL_DEPTH_STATISTIC_METHOD> ],
+        [ sh:description "Soil depth comments" ;
+            sh:order 11 ;
+            sh:path <https://example.org/TEMP/SOIL_DEPTH_COMMENT> ],
+        [ sh:description "Number of observations used to determine soil depth of organic horizon statistic" ;
+            sh:order 7 ;
+            sh:path <https://example.org/TEMP/SOIL_DEPTH_ORG_STATISTIC_NUMBER> ],
+        [ sh:description "Uncertainty in the Soil depth measurement date" ;
+            sh:order 10 ;
+            sh:path <https://example.org/TEMP/SOIL_DEPTH_DATE_UNC> ],
+        [ sh:description "Number of observations used to determine soil depth statistic" ;
+            sh:order 3 ;
+            sh:path <https://example.org/TEMP/SOIL_DEPTH_STATISTIC_NUMBER> ],
+        [ sh:description "Soil depth statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path <https://example.org/TEMP/SOIL_DEPTH_STATISTIC> ],
+        [ sh:description "Soil depth of organic horizon statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 6 ;
+            sh:path <https://example.org/TEMP/SOIL_DEPTH_ORG_STATISTIC_METHOD> ],
+        [ sh:description "Soil depth measurement approach" ;
+            sh:order 8 ;
+            sh:path <https://example.org/TEMP/SOIL_DEPTH_APPROACH> ],
+        [ sh:description "Soil depth of organic horizon" ;
+            sh:order 4 ;
+            sh:path <https://example.org/TEMP/SOIL_DEPTH_ORG> ],
+        [ sh:description "Soil depth" ;
+            sh:order 0 ;
+            sh:path <https://example.org/TEMP/SOIL_DEPTH> ],
+        [ sh:description "Soil depth of organic horizon statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 5 ;
+            sh:path <https://example.org/TEMP/SOIL_DEPTH_ORG_STATISTIC> ],
+        [ sh:description "Soil depth measurement date" ;
+            sh:minCount 1 ;
+            sh:order 9 ;
+            sh:path <https://example.org/TEMP/SOIL_DEPTH_DATE> ] ;
+    sh:targetClass <https://example.org/TEMP/GRPSOILDEPTH> .
+
+<https://example.org/TEMP/GRPSOILORDER> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Soil Order comments" ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://example.org/TEMP/SOIL_ORDER_COMMENT> ],
+        [ sh:description "Approach used for assigning Soil Order" ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://example.org/TEMP/SOIL_ORDER_APPROACH> ],
+        [ sh:description "Soil Order for tower site according to National Resource Conservation Service (NRCS) Soil Taxonomy" ;
+            sh:in ( "Alfisols" "Andisols" "Aridisols" "Entisols" "Gelisols" "Histosols" "Inceptisols" "Mollisols" "Oxisols" "Spodosols" "Ultisols" "Vertisols" ) ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://example.org/TEMP/SOIL_ORDER> ] ;
+    sh:targetClass <https://example.org/TEMP/GRPSOILORDER> .
+
+<https://example.org/TEMP/GRPSOILSERIES> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Approach used for assigning Soil Series" ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://example.org/TEMP/SOIL_SERIES_APPROACH> ],
+        [ sh:description "Soil Series comments" ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://example.org/TEMP/SOIL_SERIES_COMMENT> ],
+        [ sh:description "Soil Series for tower site according to a taxonomy" ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://example.org/TEMP/SOIL_SERIES> ] ;
+    sh:targetClass <https://example.org/TEMP/GRPSOILSERIES> .
+
+<https://example.org/TEMP/GRPSOILSTOCK> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Soil ammonium stock" ;
+            sh:order 8 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_NH4> ],
+        [ sh:description "Soil stock profile maximum depth" ;
+            sh:order 26 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_PROFILE_MAX> ],
+        [ sh:description "Soil phosphorus stock" ;
+            sh:order 20 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_P> ],
+        [ sh:description "Number of observations used to determine soil organic carbon stock statistic" ;
+            sh:order 3 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_C_ORG_STATISTIC_NUMBER> ],
+        [ sh:description "Number of observations used to determine soil phosphorus stock statistic" ;
+            sh:order 23 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_P_STATISTIC_NUMBER> ],
+        [ sh:description "Uncertainty in the Soil stock measurement sampling date" ;
+            sh:order 30 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_DATE_UNC> ],
+        [ sh:description "Soil stock comments" ;
+            sh:order 31 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_COMMENT> ],
+        [ sh:description "Soil nitrate stock statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 14 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_NO3_STATISTIC_METHOD> ],
+        [ sh:description "Soil total nitrogen stock statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 5 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_N_TOT_STATISTIC> ],
+        [ sh:description "Soil ammonium stock statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 9 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_NH4_STATISTIC> ],
+        [ sh:description "Soil stock profile minimum depth" ;
+            sh:order 25 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_PROFILE_MIN> ],
+        [ sh:description "Soil phosphorus stock statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 21 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_P_STATISTIC> ],
+        [ sh:description "Soil potassium stock statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 18 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_K_STATISTIC_METHOD> ],
+        [ sh:description "Soil stock measurement sampling date" ;
+            sh:minCount 1 ;
+            sh:order 29 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_DATE> ],
+        [ sh:description "Soil total nitrogen stock" ;
+            sh:order 4 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_N_TOT> ],
+        [ sh:description "Soil stock measurement approach" ;
+            sh:order 28 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_APPROACH> ],
+        [ sh:description "Soil stock profile zero reference" ;
+            sh:in ( "Other" "Top of mineral soil" "Top of surface" ) ;
+            sh:order 24 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_PROFILE_ZERO_REF> ],
+        [ sh:description "Soil potassium stock statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 17 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_K_STATISTIC> ],
+        [ sh:description "Soil organic carbon stock statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_C_ORG_STATISTIC> ],
+        [ sh:description "Soil phosphorus stock statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 22 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_P_STATISTIC_METHOD> ],
+        [ sh:description "Soil nitrate stock statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 13 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_NO3_STATISTIC> ],
+        [ sh:description "Soil nitrate stock" ;
+            sh:order 12 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_NO3> ],
+        [ sh:description "Number of observations used to determine soil ammonium stock statistic" ;
+            sh:order 11 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_NH4_STATISTIC_NUMBER> ],
+        [ sh:description "Number of observations used to determine soil potassium stock statistic" ;
+            sh:order 19 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_K_STATISTIC_NUMBER> ],
+        [ sh:description "Soil potassium stock" ;
+            sh:order 16 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_K> ],
+        [ sh:description "Number of observations used to determine soil nitrate stock statistic" ;
+            sh:order 15 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_NO3_STATISTIC_NUMBER> ],
+        [ sh:description "Soil stock profile horizon" ;
+            sh:order 27 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_HORIZON> ],
+        [ sh:description "Soil organic carbon stock statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 2 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_C_ORG_STATISTIC_METHOD> ],
+        [ sh:description "Number of observations used to determine soil total nitrogen stock statistic" ;
+            sh:order 7 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_N_TOT_STATISTIC_NUMBER> ],
+        [ sh:description "Soil organic carbon stock" ;
+            sh:order 0 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_C_ORG> ],
+        [ sh:description "Soil total nitrogen stock statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 6 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_N_TOT_STATISTIC_METHOD> ],
+        [ sh:description "Soil ammonium stock statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 10 ;
+            sh:path <https://example.org/TEMP/SOIL_STOCK_NH4_STATISTIC_METHOD> ] ;
+    sh:targetClass <https://example.org/TEMP/GRPSOILSTOCK> .
+
+<https://example.org/TEMP/GRPSOILTEX> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Field capacity statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 29 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_FIELD_CAP_STATISTIC> ],
+        [ sh:description "Soil texture measurement approach" ;
+            sh:order 36 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_APPROACH> ],
+        [ sh:description "Soil water holding capacity statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 18 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_WATER_HOLD_CAP_STATISTIC_METHOD> ],
+        [ sh:description "Soil water saturation point statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 25 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_SAT_STATISTIC> ],
+        [ sh:description "Soil water holding capacity statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 17 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_WATER_HOLD_CAP_STATISTIC> ],
+        [ sh:description "Soil texture profile horizon" ;
+            sh:order 35 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_HORIZON> ],
+        [ sh:description "Soil water saturation point statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 26 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_SAT_STATISTIC_METHOD> ],
+        [ sh:description "Sand content statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 2 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_SAND_STATISTIC_METHOD> ],
+        [ sh:description "Number of observations used to determine sand content statistic" ;
+            sh:order 3 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_SAND_STATISTIC_NUMBER> ],
+        [ sh:description "Number of observations used to determine wilting point statistic" ;
+            sh:order 23 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_WILT_STATISTIC_NUMBER> ],
+        [ sh:description "Wilting point" ;
+            sh:order 20 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_WILT> ],
+        [ sh:description "Rock content (>2mm)" ;
+            sh:order 12 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_ROCK> ],
+        [ sh:description "Clay content statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 10 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_CLAY_STATISTIC_METHOD> ],
+        [ sh:description "Field capacity" ;
+            sh:order 28 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_FIELD_CAP> ],
+        [ sh:description "Soil texture profile zero reference" ;
+            sh:in ( "Other" "Top of mineral soil" "Top of surface" ) ;
+            sh:order 32 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_PROFILE_ZERO_REF> ],
+        [ sh:description "Wilting point statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 22 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_WILT_STATISTIC_METHOD> ],
+        [ sh:description "Number of observations used to determine rock content (>2mm) statistic" ;
+            sh:order 15 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_ROCK_STATISTIC_NUMBER> ],
+        [ sh:description "Number of observations used to determine silt content statistic" ;
+            sh:order 7 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_SILT_STATISTIC_NUMBER> ],
+        [ sh:description "Soil water holding capacity" ;
+            sh:order 16 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_WATER_HOLD_CAP> ],
+        [ sh:description "Number of observations used to determine soil water holding capacity statistic" ;
+            sh:order 19 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_WATER_HOLD_CAP_STATISTIC_NUMBER> ],
+        [ sh:description "Clay content statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 9 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_CLAY_STATISTIC> ],
+        [ sh:description "Number of observations used to determine soil water saturation point statistic" ;
+            sh:order 27 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_SAT_STATISTIC_NUMBER> ],
+        [ sh:description "Silt content statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 5 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_SILT_STATISTIC> ],
+        [ sh:description "Silt content statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 6 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_SILT_STATISTIC_METHOD> ],
+        [ sh:description "Field capacity statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 30 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_FIELD_CAP_STATISTIC_METHOD> ],
+        [ sh:description "Number of observations used to determine field capacity statistic" ;
+            sh:order 31 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_FIELD_CAP_STATISTIC_NUMBER> ],
+        [ sh:description "Soil texture profile maximum depth" ;
+            sh:order 34 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_PROFILE_MAX> ],
+        [ sh:description "Number of observations used to determine clay content statistic" ;
+            sh:order 11 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_CLAY_STATISTIC_NUMBER> ],
+        [ sh:description "Rock content (>2mm) statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 14 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_ROCK_STATISTIC_METHOD> ],
+        [ sh:description "Soil texture measurement date" ;
+            sh:minCount 1 ;
+            sh:order 37 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_DATE> ],
+        [ sh:description "Silt content" ;
+            sh:order 4 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_SILT> ],
+        [ sh:description "Uncertainty in the Soil texture measurement date" ;
+            sh:order 38 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_DATE_UNC> ],
+        [ sh:description "Soil texture profile minimum depth" ;
+            sh:order 33 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_PROFILE_MIN> ],
+        [ sh:description "Rock content (>2mm) statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 13 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_ROCK_STATISTIC> ],
+        [ sh:description "Soil texture comments" ;
+            sh:order 39 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_COMMENT> ],
+        [ sh:description "Soil water saturation point" ;
+            sh:order 24 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_SAT> ],
+        [ sh:description "Sand content statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_SAND_STATISTIC> ],
+        [ sh:description "Clay content" ;
+            sh:order 8 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_CLAY> ],
+        [ sh:description "Sand content" ;
+            sh:order 0 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_SAND> ],
+        [ sh:description "Wilting point statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 21 ;
+            sh:path <https://example.org/TEMP/SOIL_TEX_WILT_STATISTIC> ] ;
+    sh:targetClass <https://example.org/TEMP/GRPSOILTEX> .
+
+<https://example.org/TEMP/GRPSOILWRBGROUP> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Approach used for assigning Soil WRB Group" ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://example.org/TEMP/SOIL_WRB_GROUP_APPROACH> ],
+        [ sh:description "Soil WRB Group comments" ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://example.org/TEMP/SOIL_WRB_GROUP_COMMENT> ],
+        [ sh:description "Soil Group for tower site according to the Soil World Reference Base for Soil Resources (WRB)" ;
+            sh:in ( "Acrisol" "Albeluvisol" "Alisol" "Andosol" "Anthrosol" "Arenosol" "Calcisol" "Cambisol" "Chernozem" "Cryosol" "Durisol" "Ferralsol" "Fluvisol" "Gleysol" "Gypsisol" "Histosol" "Kastanozem" "Leptosol" "Lixisol" "Luvisol" "Nitisol" "Phaeozem" "Planosol" "Plinthosol" "Podzol" "Regosol" "Solonchak" "Solonetz" "Technosol" "Umbrisol" "Vertisol" ) ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <https://example.org/TEMP/SOIL_WRB_GROUP> ] ;
+    sh:targetClass <https://example.org/TEMP/GRPSOILWRBGROUP> .
+
+<https://example.org/TEMP/GRPSWC> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "End date of Soil water content measurement" ;
+            sh:order 12 ;
+            sh:path <https://example.org/TEMP/SWC_DATE_END> ],
+        [ sh:description "Soil water content measurement date" ;
+            sh:minCount 1 ;
+            sh:order 10 ;
+            sh:path <https://example.org/TEMP/SWC_DATE> ],
+        [ sh:description "Soil water content comments" ;
+            sh:order 14 ;
+            sh:path <https://example.org/TEMP/SWC_COMMENT> ],
+        [ sh:description "Soil water content statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 2 ;
+            sh:path <https://example.org/TEMP/SWC_STATISTIC_METHOD> ],
+        [ sh:description "Start date of Soil water content measurment" ;
+            sh:minCount 1 ;
+            sh:order 11 ;
+            sh:path <https://example.org/TEMP/SWC_DATE_START> ],
+        [ sh:description "Uncertainty in the Date(s) of Soil water content measurement" ;
+            sh:order 13 ;
+            sh:path <https://example.org/TEMP/SWC_DATE_UNC> ],
+        [ sh:description "Soil water content measurement approach" ;
+            sh:order 9 ;
+            sh:path <https://example.org/TEMP/SWC_APPROACH> ],
+        [ sh:description "Measurement unit of Soil water content" ;
+            sh:in ( "Gravimetric" "Volumetric" ) ;
+            sh:minCount 1 ;
+            sh:order 4 ;
+            sh:path <https://example.org/TEMP/SWC_UNIT> ],
+        [ sh:description "Soil water content statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path <https://example.org/TEMP/SWC_STATISTIC> ],
+        [ sh:description "Soil water content (not continuous measurements)" ;
+            sh:order 0 ;
+            sh:path <https://example.org/TEMP/SWC> ],
+        [ sh:description "Number of observations used to determine soil water content statistic" ;
+            sh:order 3 ;
+            sh:path <https://example.org/TEMP/SWC_STATISTIC_NUMBER> ],
+        [ sh:description "Soil water content profile minimum depth" ;
+            sh:order 6 ;
+            sh:path <https://example.org/TEMP/SWC_PROFILE_MIN> ],
+        [ sh:description "Soil water content profile zero reference" ;
+            sh:in ( "Other" "Top of mineral soil" "Top of surface" ) ;
+            sh:order 5 ;
+            sh:path <https://example.org/TEMP/SWC_PROFILE_ZERO_REF> ],
+        [ sh:description "Soil water content profile maximum depth" ;
+            sh:order 7 ;
+            sh:path <https://example.org/TEMP/SWC_PROFILE_MAX> ],
+        [ sh:description "Soil water content horizon" ;
+            sh:order 8 ;
+            sh:path <https://example.org/TEMP/SWC_HORIZON> ] ;
+    sh:targetClass <https://example.org/TEMP/GRPSWC> .
+
+<https://example.org/TEMP/GRPWTD> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Water table depth (not continuous measurements)" ;
+            sh:order 0 ;
+            sh:path <https://example.org/TEMP/WTD> ],
+        [ sh:description "Uncertainty in the Water table depth measurement date" ;
+            sh:order 6 ;
+            sh:path <https://example.org/TEMP/WTD_DATE_UNC> ],
+        [ sh:description "Number of observations used to determine water table depth statistic" ;
+            sh:order 3 ;
+            sh:path <https://example.org/TEMP/WTD_STATISTIC_NUMBER> ],
+        [ sh:description "Water table depth statistic" ;
+            sh:in ( "10th Percentile" "1st Percentile" "25th Percentile" "5th Percentile" "75th Percentile" "90th Percentile" "95th Percentile" "99th Percentile" "Maximum" "Mean" "Measurement Uncertainty" "Median - 50th Percentile" "Minimum" "Single observation" "Standard Deviation" ) ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path <https://example.org/TEMP/WTD_STATISTIC> ],
+        [ sh:description "Water table depth comments" ;
+            sh:order 7 ;
+            sh:path <https://example.org/TEMP/WTD_COMMENT> ],
+        [ sh:description "Water table depth statistic method" ;
+            sh:in ( "Aggregate of individual observations" "Aggregate of sample aggregates" "Expert estimate" ) ;
+            sh:order 2 ;
+            sh:path <https://example.org/TEMP/WTD_STATISTIC_METHOD> ],
+        [ sh:description "Water table depth measurement date" ;
+            sh:minCount 1 ;
+            sh:order 5 ;
+            sh:path <https://example.org/TEMP/WTD_DATE> ],
+        [ sh:description "Water table depth measurement approach" ;
+            sh:order 4 ;
+            sh:path <https://example.org/TEMP/WTD_APPROACH> ] ;
+    sh:targetClass <https://example.org/TEMP/GRPWTD> .
+

@@ -1,0 +1,1828 @@
+classes:
+  GRP_HEADER:
+    from_schema: TEMP
+    slot_usage:
+      SITE_ID:
+        comments:
+        - The code is assigned by the network and communicated to the PI when the
+          site is first registered. Use only the assigned code once it has been assigned.
+          If you do not yet have a site_id contact your regional network to get one
+          assigned.
+        description: Six character site identifier. MANDATORY if site is already registered
+        identifier: true
+      SITE_NAME:
+        comments:
+        - The name should be related to the location where the site is installed and
+          not the name of the vegetation type (e.g. "Central Park New York" is ok,
+          "forest" is not).
+        description: Site name
+        required: true
+      SUBMISSION_CONTACT_EMAIL:
+        comments:
+        - This person is the one that we will contact to get help solving issues related
+          to the data import process for this data submission.
+        description: E-mail address of the person who submitted this template
+        required: true
+      SUBMISSION_CONTACT_NAME:
+        comments:
+        - This person is the one that we will contact to get help solving issues related
+          to the data import process for this data submission.
+        description: Name of person who submitted this template
+        required: true
+      SUBMISSION_DATE:
+        comments:
+        - If you change this template's contents, this date should be the date of
+          the last change.
+        description: Date this submission was last edited/modified
+        required: true
+    slots:
+    - SITE_ID
+    - SITE_NAME
+    - SUBMISSION_CONTACT_NAME
+    - SUBMISSION_CONTACT_EMAIL
+    - SUBMISSION_DATE
+  GRP_PFCURVE:
+    from_schema: TEMP
+    slot_usage:
+      PFCURVE_APPROACH:
+        comments:
+        - Report Water retention (pF) curve SWC units (gravimetric or volumetric)
+          as part of Approach for the Water retention (pF) curve measurement.
+        description: Water retention (pF) curve measurement approach
+        multivalued: true
+      PFCURVE_COMMENT:
+        description: Water retention (pF) curve comments
+        multivalued: true
+      PFCURVE_DATE:
+        comments:
+        - Please report the date at the precision known. Allowed reporting precisions
+          are YYYY, YYYYMM, YYYYMMDD, and YYYYMMDDHHMM.
+        description: Water retention (pF) curve measurement date
+        multivalued: true
+        required: true
+      PFCURVE_DATE_UNC:
+        description: Uncertainty in the Water retention (pF) curve measurement date
+        multivalued: true
+      PFCURVE_MP:
+        comments:
+        - This measure is intended to be taken in conjunction with PFCURVE_SWC so
+          that a water retention (pF) can be generated. (pF is the negative log of
+          matric potential.)
+        description: Water retention (pF) curve matric potential
+        identifier: true
+        multivalued: true
+      PFCURVE_MP_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Water retention (pF) curve matric potential statistic
+        multivalued: true
+        required: true
+      PFCURVE_MP_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Water retention (pF) curve matric potential statistic method
+        multivalued: true
+      PFCURVE_MP_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine water retention (pF)
+          curve matric potential statistic
+        multivalued: true
+      PFCURVE_SWC:
+        comments:
+        - This measure is intended to be taken in conjunction with PFCURVE_MP so that
+          a water retention (pF) can be generated. (pF is the negative log of matric
+          potential.) Report units (gravimetric or volumetric) in Approach.
+        description: Water retention (pF) curve soil water content (SWC)
+        multivalued: true
+        required: true
+      PFCURVE_SWC_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Water retention (pF) curve soil water content (SWC) statistic
+        multivalued: true
+        required: true
+      PFCURVE_SWC_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Water retention (pF) curve soil water content (SWC) statistic
+          method
+        multivalued: true
+      PFCURVE_SWC_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine water retention (pF)
+          curve soil water content (SWC) statistic
+        multivalued: true
+      PFCURVE_SWC_UNIT:
+        comments:
+        - Use the predefined list to specify gravimetric (mass water / mass dry soil)
+          or volumetric (volume water / volume soil) water content.
+        description: Measurement unit of Water retention (pF) curve soil water content
+          (SWC)
+        multivalued: true
+        required: true
+    slots:
+    - PFCURVE_MP
+    - PFCURVE_MP_STATISTIC
+    - PFCURVE_MP_STATISTIC_METHOD
+    - PFCURVE_MP_STATISTIC_NUMBER
+    - PFCURVE_SWC
+    - PFCURVE_SWC_STATISTIC
+    - PFCURVE_SWC_STATISTIC_METHOD
+    - PFCURVE_SWC_STATISTIC_NUMBER
+    - PFCURVE_SWC_UNIT
+    - PFCURVE_APPROACH
+    - PFCURVE_DATE
+    - PFCURVE_DATE_UNC
+    - PFCURVE_COMMENT
+  GRP_SOIL_CHEM:
+    from_schema: TEMP
+    slot_usage:
+      SOIL_CHEM_APPROACH:
+        comments:
+        - Approach describes both sampling and processing methodologies. Please provide
+          details that will improve intepretation of measurement/assessment, facilitate
+          comparison with similar measures made with different approaches, and/or
+          allow for quality checking.
+        description: Soil chemistry measurement approach
+        multivalued: true
+      SOIL_CHEM_BD:
+        description: Soil bulk density
+        identifier: true
+        multivalued: true
+      SOIL_CHEM_BD_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil bulk density statistic
+        multivalued: true
+        required: true
+      SOIL_CHEM_BD_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil bulk density statistic method
+        multivalued: true
+      SOIL_CHEM_BD_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil bulk density statistic
+        multivalued: true
+      SOIL_CHEM_CN_RATIO:
+        comments:
+        - Soil carbon to nitrogen ratio.
+        description: Soil C/N ratio
+        identifier: true
+        multivalued: true
+      SOIL_CHEM_CN_RATIO_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil C/N ratio statistic
+        multivalued: true
+        required: true
+      SOIL_CHEM_CN_RATIO_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil C/N ratio statistic method
+        multivalued: true
+      SOIL_CHEM_CN_RATIO_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil C/N ratio statistic
+        multivalued: true
+      SOIL_CHEM_COMMENT:
+        description: Soil chemistry comments
+        multivalued: true
+      SOIL_CHEM_C_ORG:
+        description: Soil organic carbon concentration
+        identifier: true
+        multivalued: true
+      SOIL_CHEM_C_ORG_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil organic carbon concentration statistic
+        multivalued: true
+        required: true
+      SOIL_CHEM_C_ORG_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil organic carbon concentration statistic method
+        multivalued: true
+      SOIL_CHEM_C_ORG_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil organic carbon
+          concentration statistic
+        multivalued: true
+      SOIL_CHEM_DATE:
+        comments:
+        - Please report the date at the precision known. Allowed reporting precisions
+          are YYYY, YYYYMM, YYYYMMDD, and YYYYMMDDHHMM.
+        description: Soil chemistry measurement sampling date
+        multivalued: true
+        required: true
+      SOIL_CHEM_DATE_UNC:
+        description: Uncertainty in the Soil chemistry measurement sampling date
+        multivalued: true
+      SOIL_CHEM_HORIZON:
+        comments:
+        - Use soil horizon scheme best suited for your soil. Examples include O, Oa,
+          B, Bt, C.
+        description: Soil chemistry profile horizon
+        multivalued: true
+      SOIL_CHEM_K:
+        description: Soil potassium concentration
+        identifier: true
+        multivalued: true
+      SOIL_CHEM_K_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil potassium concentration statistic
+        multivalued: true
+        required: true
+      SOIL_CHEM_K_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil potassium concentration statistic method
+        multivalued: true
+      SOIL_CHEM_K_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil potassium concentration
+          statistic
+        multivalued: true
+      SOIL_CHEM_NH4:
+        description: Soil ammonium concentration
+        identifier: true
+        multivalued: true
+      SOIL_CHEM_NH4_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil ammonium concentration statistic
+        multivalued: true
+        required: true
+      SOIL_CHEM_NH4_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil ammonium concentration statistic method
+        multivalued: true
+      SOIL_CHEM_NH4_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil ammonium concentration
+          statistic
+        multivalued: true
+      SOIL_CHEM_NO3:
+        description: Soil nitrate concentration
+        identifier: true
+        multivalued: true
+      SOIL_CHEM_NO3_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil nitrate concentration statistic
+        multivalued: true
+        required: true
+      SOIL_CHEM_NO3_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil nitrate concentration statistic method
+        multivalued: true
+      SOIL_CHEM_NO3_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil nitrate concentration
+          statistic
+        multivalued: true
+      SOIL_CHEM_N_TOT:
+        description: Soil total nitrogen concentration
+        identifier: true
+        multivalued: true
+      SOIL_CHEM_N_TOT_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil total nitrogen concentration statistic
+        multivalued: true
+        required: true
+      SOIL_CHEM_N_TOT_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil total nitrogen concentration statistic method
+        multivalued: true
+      SOIL_CHEM_N_TOT_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil total nitrogen
+          concentration statistic
+        multivalued: true
+      SOIL_CHEM_P:
+        description: Soil phosphorus concentration
+        identifier: true
+        multivalued: true
+      SOIL_CHEM_PH_H2O:
+        comments:
+        - Soil pH determined in water.
+        description: Soil pH by H2O
+        identifier: true
+        multivalued: true
+      SOIL_CHEM_PH_H2O_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil pH by H2O statistic
+        multivalued: true
+        required: true
+      SOIL_CHEM_PH_H2O_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil pH by H2O statistic method
+        multivalued: true
+      SOIL_CHEM_PH_H2O_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil pH by H2O statistic
+        multivalued: true
+      SOIL_CHEM_PH_SALT:
+        comments:
+        - If pH is determined with a salt other than CaCl2, specify the salt used
+          in Approach.
+        description: Soil pH by CaCl2 or other salt
+        identifier: true
+        multivalued: true
+      SOIL_CHEM_PH_SALT_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil pH by CaCl2 or other salt statistic
+        multivalued: true
+        required: true
+      SOIL_CHEM_PH_SALT_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil pH by CaCl2 or other salt statistic method
+        multivalued: true
+      SOIL_CHEM_PH_SALT_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil pH by CaCl2 or
+          other salt statistic
+        multivalued: true
+      SOIL_CHEM_PROFILE_MAX:
+        comments:
+        - Profile maximum depth is the vertical distance from profile zero reference
+          to the bottom of soil layer being measured.
+        description: Soil chemistry profile maximum depth
+        multivalued: true
+      SOIL_CHEM_PROFILE_MIN:
+        comments:
+        - Profile minimum depth is the vertical distance from profile zero reference
+          to the top of soil layer being measured.
+        description: Soil chemistry profile minimum depth
+        multivalued: true
+      SOIL_CHEM_PROFILE_ZERO_REF:
+        comments:
+        - Profile Zero Reference is the horizontal plane from which the soil profile
+          minimum and maximum depths are measured. For example, top of mineral soil
+          or top of litter layer. Use predefined list.
+        description: Soil chemistry profile zero reference
+        multivalued: true
+      SOIL_CHEM_P_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil phosphorus concentration statistic
+        multivalued: true
+        required: true
+      SOIL_CHEM_P_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil phosphorus concentration statistic method
+        multivalued: true
+      SOIL_CHEM_P_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil phosphorus concentration
+          statistic
+        multivalued: true
+    slots:
+    - SOIL_CHEM_C_ORG
+    - SOIL_CHEM_C_ORG_STATISTIC
+    - SOIL_CHEM_C_ORG_STATISTIC_METHOD
+    - SOIL_CHEM_C_ORG_STATISTIC_NUMBER
+    - SOIL_CHEM_N_TOT
+    - SOIL_CHEM_N_TOT_STATISTIC
+    - SOIL_CHEM_N_TOT_STATISTIC_METHOD
+    - SOIL_CHEM_N_TOT_STATISTIC_NUMBER
+    - SOIL_CHEM_NH4
+    - SOIL_CHEM_NH4_STATISTIC
+    - SOIL_CHEM_NH4_STATISTIC_METHOD
+    - SOIL_CHEM_NH4_STATISTIC_NUMBER
+    - SOIL_CHEM_NO3
+    - SOIL_CHEM_NO3_STATISTIC
+    - SOIL_CHEM_NO3_STATISTIC_METHOD
+    - SOIL_CHEM_NO3_STATISTIC_NUMBER
+    - SOIL_CHEM_K
+    - SOIL_CHEM_K_STATISTIC
+    - SOIL_CHEM_K_STATISTIC_METHOD
+    - SOIL_CHEM_K_STATISTIC_NUMBER
+    - SOIL_CHEM_P
+    - SOIL_CHEM_P_STATISTIC
+    - SOIL_CHEM_P_STATISTIC_METHOD
+    - SOIL_CHEM_P_STATISTIC_NUMBER
+    - SOIL_CHEM_CN_RATIO
+    - SOIL_CHEM_CN_RATIO_STATISTIC
+    - SOIL_CHEM_CN_RATIO_STATISTIC_METHOD
+    - SOIL_CHEM_CN_RATIO_STATISTIC_NUMBER
+    - SOIL_CHEM_PH_SALT
+    - SOIL_CHEM_PH_SALT_STATISTIC
+    - SOIL_CHEM_PH_SALT_STATISTIC_METHOD
+    - SOIL_CHEM_PH_SALT_STATISTIC_NUMBER
+    - SOIL_CHEM_PH_H2O
+    - SOIL_CHEM_PH_H2O_STATISTIC
+    - SOIL_CHEM_PH_H2O_STATISTIC_METHOD
+    - SOIL_CHEM_PH_H2O_STATISTIC_NUMBER
+    - SOIL_CHEM_BD
+    - SOIL_CHEM_BD_STATISTIC
+    - SOIL_CHEM_BD_STATISTIC_METHOD
+    - SOIL_CHEM_BD_STATISTIC_NUMBER
+    - SOIL_CHEM_PROFILE_ZERO_REF
+    - SOIL_CHEM_PROFILE_MIN
+    - SOIL_CHEM_PROFILE_MAX
+    - SOIL_CHEM_HORIZON
+    - SOIL_CHEM_APPROACH
+    - SOIL_CHEM_DATE
+    - SOIL_CHEM_DATE_UNC
+    - SOIL_CHEM_COMMENT
+  GRP_SOIL_CLASSIFICATION:
+    from_schema: TEMP
+    slot_usage:
+      SOIL_CLASSIFICATION:
+        comments:
+        - 'A more detailed description of the soil using a taxonomic system. Specify
+          the taxonomy used in SOIL_CLASSIFICATION_TAXONOMY. Suggested taxonomies
+          are NRCS and WRB (previously FAO). It is recommended to include texture,
+          but not necessary. Two examples of Soil Classifications that includes texture
+          are: fine, thermic Argixeroll and sandy, mixed, mesic Ultic Haploxeralf.'
+        description: Soil Classification for tower site according to a taxonomy
+        identifier: true
+      SOIL_CLASSIFICATION_APPROACH:
+        description: Approach used for assigning Soil Classification
+      SOIL_CLASSIFICATION_COMMENT:
+        description: Soil Classification comments
+      SOIL_CLASSIFICATION_TAXONOMY:
+        comments:
+        - Use WRB (previously FAO) or NRCS as indicated in the predefined list. If
+          you specify Other, report taxonomy in Approach.
+        description: Specify the taxonomy used for Soil Classification
+    slots:
+    - SOIL_CLASSIFICATION
+    - SOIL_CLASSIFICATION_TAXONOMY
+    - SOIL_CLASSIFICATION_APPROACH
+    - SOIL_CLASSIFICATION_COMMENT
+  GRP_SOIL_DEPTH:
+    from_schema: TEMP
+    slot_usage:
+      SOIL_DEPTH:
+        comments:
+        - Report the depth (thickness) of the soil that is in theory accessible to
+          the plant roots or up to the first rock layer as measured from the top of
+          the litter layer. Define depth used in Approach.
+        description: Soil depth
+        identifier: true
+        multivalued: true
+      SOIL_DEPTH_APPROACH:
+        description: Soil depth measurement approach
+        multivalued: true
+      SOIL_DEPTH_COMMENT:
+        description: Soil depth comments
+        multivalued: true
+      SOIL_DEPTH_DATE:
+        comments:
+        - Please report the date at the precision known. Allowed reporting precisions
+          are YYYY, YYYYMM, YYYYMMDD, and YYYYMMDDHHMM.
+        description: Soil depth measurement date
+        multivalued: true
+        required: true
+      SOIL_DEPTH_DATE_UNC:
+        description: Uncertainty in the Soil depth measurement date
+        multivalued: true
+      SOIL_DEPTH_ORG:
+        comments:
+        - Report the depth (thickness) of the organic soil horizon as measured from
+          the top of the litter layer.
+        description: Soil depth of organic horizon
+        identifier: true
+        multivalued: true
+      SOIL_DEPTH_ORG_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil depth of organic horizon statistic
+        multivalued: true
+        required: true
+      SOIL_DEPTH_ORG_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil depth of organic horizon statistic method
+        multivalued: true
+      SOIL_DEPTH_ORG_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil depth of organic
+          horizon statistic
+        multivalued: true
+      SOIL_DEPTH_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil depth statistic
+        multivalued: true
+        required: true
+      SOIL_DEPTH_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil depth statistic method
+        multivalued: true
+      SOIL_DEPTH_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil depth statistic
+        multivalued: true
+    slots:
+    - SOIL_DEPTH
+    - SOIL_DEPTH_STATISTIC
+    - SOIL_DEPTH_STATISTIC_METHOD
+    - SOIL_DEPTH_STATISTIC_NUMBER
+    - SOIL_DEPTH_ORG
+    - SOIL_DEPTH_ORG_STATISTIC
+    - SOIL_DEPTH_ORG_STATISTIC_METHOD
+    - SOIL_DEPTH_ORG_STATISTIC_NUMBER
+    - SOIL_DEPTH_APPROACH
+    - SOIL_DEPTH_DATE
+    - SOIL_DEPTH_DATE_UNC
+    - SOIL_DEPTH_COMMENT
+  GRP_SOIL_ORDER:
+    from_schema: TEMP
+    slot_usage:
+      SOIL_ORDER:
+        comments:
+        - NRCS Soil Taxonomy is a soil classification system. It is based on soil
+          properties as they appear in the field, such as presence and ordering of
+          diagnostic horizons. Determine the Soil Order based on the appearance of
+          the soil in the field. Choose the Order from the predefined list that best
+          describes the dominant order within the tower site. SOIL_ORDER does not
+          need to be reported if WRB_GROUP is.
+        description: Soil Order for tower site according to National Resource Conservation
+          Service (NRCS) Soil Taxonomy
+        identifier: true
+      SOIL_ORDER_APPROACH:
+        description: Approach used for assigning Soil Order
+      SOIL_ORDER_COMMENT:
+        description: Soil Order comments
+    slots:
+    - SOIL_ORDER
+    - SOIL_ORDER_APPROACH
+    - SOIL_ORDER_COMMENT
+  GRP_SOIL_SERIES:
+    from_schema: TEMP
+    slot_usage:
+      SOIL_SERIES:
+        comments:
+        - The Soil Series is a level in some taxonomies that describes a set of pedons
+          with similar pedogenesis, soil chemistry, and physical properties. If using
+          a taxonomy with a Soil Series level, it can be reported here. Specify taxonomy
+          used in Approach.
+        description: Soil Series for tower site according to a taxonomy
+        identifier: true
+      SOIL_SERIES_APPROACH:
+        description: Approach used for assigning Soil Series
+      SOIL_SERIES_COMMENT:
+        description: Soil Series comments
+    slots:
+    - SOIL_SERIES
+    - SOIL_SERIES_APPROACH
+    - SOIL_SERIES_COMMENT
+  GRP_SOIL_STOCK:
+    from_schema: TEMP
+    slot_usage:
+      SOIL_STOCK_APPROACH:
+        description: Soil stock measurement approach
+        multivalued: true
+      SOIL_STOCK_COMMENT:
+        description: Soil stock comments
+        multivalued: true
+      SOIL_STOCK_C_ORG:
+        description: Soil organic carbon stock
+        identifier: true
+        multivalued: true
+      SOIL_STOCK_C_ORG_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil organic carbon stock statistic
+        multivalued: true
+        required: true
+      SOIL_STOCK_C_ORG_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil organic carbon stock statistic method
+        multivalued: true
+      SOIL_STOCK_C_ORG_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil organic carbon
+          stock statistic
+        multivalued: true
+      SOIL_STOCK_DATE:
+        comments:
+        - Please report the date at the precision known. Allowed reporting precisions
+          are YYYY, YYYYMM, YYYYMMDD, and YYYYMMDDHHMM.
+        description: Soil stock measurement sampling date
+        multivalued: true
+        required: true
+      SOIL_STOCK_DATE_UNC:
+        description: Uncertainty in the Soil stock measurement sampling date
+        multivalued: true
+      SOIL_STOCK_HORIZON:
+        comments:
+        - Use soil horizon scheme best suited for your soil. Examples include O, Oa,
+          B, Bt, C.
+        description: Soil stock profile horizon
+        multivalued: true
+      SOIL_STOCK_K:
+        description: Soil potassium stock
+        identifier: true
+        multivalued: true
+      SOIL_STOCK_K_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil potassium stock statistic
+        multivalued: true
+        required: true
+      SOIL_STOCK_K_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil potassium stock statistic method
+        multivalued: true
+      SOIL_STOCK_K_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil potassium stock
+          statistic
+        multivalued: true
+      SOIL_STOCK_NH4:
+        description: Soil ammonium stock
+        identifier: true
+        multivalued: true
+      SOIL_STOCK_NH4_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil ammonium stock statistic
+        multivalued: true
+        required: true
+      SOIL_STOCK_NH4_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil ammonium stock statistic method
+        multivalued: true
+      SOIL_STOCK_NH4_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil ammonium stock
+          statistic
+        multivalued: true
+      SOIL_STOCK_NO3:
+        description: Soil nitrate stock
+        identifier: true
+        multivalued: true
+      SOIL_STOCK_NO3_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil nitrate stock statistic
+        multivalued: true
+        required: true
+      SOIL_STOCK_NO3_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil nitrate stock statistic method
+        multivalued: true
+      SOIL_STOCK_NO3_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil nitrate stock statistic
+        multivalued: true
+      SOIL_STOCK_N_TOT:
+        description: Soil total nitrogen stock
+        identifier: true
+        multivalued: true
+      SOIL_STOCK_N_TOT_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil total nitrogen stock statistic
+        multivalued: true
+        required: true
+      SOIL_STOCK_N_TOT_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil total nitrogen stock statistic method
+        multivalued: true
+      SOIL_STOCK_N_TOT_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil total nitrogen
+          stock statistic
+        multivalued: true
+      SOIL_STOCK_P:
+        description: Soil phosphorus stock
+        identifier: true
+        multivalued: true
+      SOIL_STOCK_PROFILE_MAX:
+        comments:
+        - Profile maximum depth is the vertical distance from profile zero reference
+          to the bottom of soil layer being measured.
+        description: Soil stock profile maximum depth
+        multivalued: true
+      SOIL_STOCK_PROFILE_MIN:
+        comments:
+        - Profile minimum depth is the vertical distance from profile zero reference
+          to the top of soil layer being measured.
+        description: Soil stock profile minimum depth
+        multivalued: true
+      SOIL_STOCK_PROFILE_ZERO_REF:
+        comments:
+        - Profile Zero Reference is the horizontal plane from which the soil profile
+          minimum and maximum depths are measured. For example, top of mineral soil
+          or top of litter layer. Use predefined list.
+        description: Soil stock profile zero reference
+        multivalued: true
+      SOIL_STOCK_P_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil phosphorus stock statistic
+        multivalued: true
+        required: true
+      SOIL_STOCK_P_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil phosphorus stock statistic method
+        multivalued: true
+      SOIL_STOCK_P_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil phosphorus stock
+          statistic
+        multivalued: true
+    slots:
+    - SOIL_STOCK_C_ORG
+    - SOIL_STOCK_C_ORG_STATISTIC
+    - SOIL_STOCK_C_ORG_STATISTIC_METHOD
+    - SOIL_STOCK_C_ORG_STATISTIC_NUMBER
+    - SOIL_STOCK_N_TOT
+    - SOIL_STOCK_N_TOT_STATISTIC
+    - SOIL_STOCK_N_TOT_STATISTIC_METHOD
+    - SOIL_STOCK_N_TOT_STATISTIC_NUMBER
+    - SOIL_STOCK_NH4
+    - SOIL_STOCK_NH4_STATISTIC
+    - SOIL_STOCK_NH4_STATISTIC_METHOD
+    - SOIL_STOCK_NH4_STATISTIC_NUMBER
+    - SOIL_STOCK_NO3
+    - SOIL_STOCK_NO3_STATISTIC
+    - SOIL_STOCK_NO3_STATISTIC_METHOD
+    - SOIL_STOCK_NO3_STATISTIC_NUMBER
+    - SOIL_STOCK_K
+    - SOIL_STOCK_K_STATISTIC
+    - SOIL_STOCK_K_STATISTIC_METHOD
+    - SOIL_STOCK_K_STATISTIC_NUMBER
+    - SOIL_STOCK_P
+    - SOIL_STOCK_P_STATISTIC
+    - SOIL_STOCK_P_STATISTIC_METHOD
+    - SOIL_STOCK_P_STATISTIC_NUMBER
+    - SOIL_STOCK_PROFILE_ZERO_REF
+    - SOIL_STOCK_PROFILE_MIN
+    - SOIL_STOCK_PROFILE_MAX
+    - SOIL_STOCK_HORIZON
+    - SOIL_STOCK_APPROACH
+    - SOIL_STOCK_DATE
+    - SOIL_STOCK_DATE_UNC
+    - SOIL_STOCK_COMMENT
+  GRP_SOIL_TEX:
+    from_schema: TEMP
+    slot_usage:
+      SOIL_TEX_APPROACH:
+        description: Soil texture measurement approach
+        multivalued: true
+      SOIL_TEX_CLAY:
+        description: Clay content
+        identifier: true
+        multivalued: true
+      SOIL_TEX_CLAY_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Clay content statistic
+        multivalued: true
+        required: true
+      SOIL_TEX_CLAY_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Clay content statistic method
+        multivalued: true
+      SOIL_TEX_CLAY_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine clay content statistic
+        multivalued: true
+      SOIL_TEX_COMMENT:
+        description: Soil texture comments
+        multivalued: true
+      SOIL_TEX_DATE:
+        comments:
+        - Please report the date at the precision known. Allowed reporting precisions
+          are YYYY, YYYYMM, YYYYMMDD, and YYYYMMDDHHMM.
+        description: Soil texture measurement date
+        multivalued: true
+        required: true
+      SOIL_TEX_DATE_UNC:
+        description: Uncertainty in the Soil texture measurement date
+        multivalued: true
+      SOIL_TEX_FIELD_CAP:
+        comments:
+        - Amount of water in the soil at -33 kPa (-0.33 Bar) or that remains after
+          soil has been saturated and free drainage stops. Please define in Approach.
+        description: Field capacity
+        identifier: true
+        multivalued: true
+      SOIL_TEX_FIELD_CAP_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Field capacity statistic
+        multivalued: true
+        required: true
+      SOIL_TEX_FIELD_CAP_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Field capacity statistic method
+        multivalued: true
+      SOIL_TEX_FIELD_CAP_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine field capacity statistic
+        multivalued: true
+      SOIL_TEX_HORIZON:
+        comments:
+        - Use soil horizon scheme best suited for your soil. Examples include O, Oa,
+          B, Bt, C.
+        description: Soil texture profile horizon
+        multivalued: true
+      SOIL_TEX_PROFILE_MAX:
+        comments:
+        - Profile maximum depth is the vertical distance from profile zero reference
+          to the bottom of soil layer being measured.
+        description: Soil texture profile maximum depth
+        multivalued: true
+      SOIL_TEX_PROFILE_MIN:
+        comments:
+        - Profile minimum depth is the vertical distance from profile zero reference
+          to the top of soil layer being measured.
+        description: Soil texture profile minimum depth
+        multivalued: true
+      SOIL_TEX_PROFILE_ZERO_REF:
+        comments:
+        - Profile Zero Reference is the horizontal plane from which the soil profile
+          minimum and maximum depths are measured. For example, top of mineral soil
+          or top of litter layer. Use predefined list.
+        description: Soil texture profile zero reference
+        multivalued: true
+      SOIL_TEX_ROCK:
+        description: Rock content (>2mm)
+        identifier: true
+        multivalued: true
+      SOIL_TEX_ROCK_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Rock content (>2mm) statistic
+        multivalued: true
+        required: true
+      SOIL_TEX_ROCK_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Rock content (>2mm) statistic method
+        multivalued: true
+      SOIL_TEX_ROCK_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine rock content (>2mm)
+          statistic
+        multivalued: true
+      SOIL_TEX_SAND:
+        description: Sand content
+        identifier: true
+        multivalued: true
+      SOIL_TEX_SAND_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Sand content statistic
+        multivalued: true
+        required: true
+      SOIL_TEX_SAND_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Sand content statistic method
+        multivalued: true
+      SOIL_TEX_SAND_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine sand content statistic
+        multivalued: true
+      SOIL_TEX_SAT:
+        comments:
+        - The amount of water in soil at saturation (or when no pressure is required
+          to remove water from the soil).
+        description: Soil water saturation point
+        identifier: true
+        multivalued: true
+      SOIL_TEX_SAT_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil water saturation point statistic
+        multivalued: true
+        required: true
+      SOIL_TEX_SAT_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil water saturation point statistic method
+        multivalued: true
+      SOIL_TEX_SAT_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil water saturation
+          point statistic
+        multivalued: true
+      SOIL_TEX_SILT:
+        description: Silt content
+        identifier: true
+        multivalued: true
+      SOIL_TEX_SILT_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Silt content statistic
+        multivalued: true
+        required: true
+      SOIL_TEX_SILT_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Silt content statistic method
+        multivalued: true
+      SOIL_TEX_SILT_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine silt content statistic
+        multivalued: true
+      SOIL_TEX_WATER_HOLD_CAP:
+        comments:
+        - Amount of water in the soil that is held between field capacity and wilting
+          point.
+        description: Soil water holding capacity
+        identifier: true
+        multivalued: true
+      SOIL_TEX_WATER_HOLD_CAP_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil water holding capacity statistic
+        multivalued: true
+        required: true
+      SOIL_TEX_WATER_HOLD_CAP_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil water holding capacity statistic method
+        multivalued: true
+      SOIL_TEX_WATER_HOLD_CAP_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil water holding capacity
+          statistic
+        multivalued: true
+      SOIL_TEX_WILT:
+        comments:
+        - The amount of water in the soil at -1500 kPa (-15 Bar) or at which plants
+          wilt. Please define in Approach.
+        description: Wilting point
+        identifier: true
+        multivalued: true
+      SOIL_TEX_WILT_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Wilting point statistic
+        multivalued: true
+        required: true
+      SOIL_TEX_WILT_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Wilting point statistic method
+        multivalued: true
+      SOIL_TEX_WILT_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine wilting point statistic
+        multivalued: true
+    slots:
+    - SOIL_TEX_SAND
+    - SOIL_TEX_SAND_STATISTIC
+    - SOIL_TEX_SAND_STATISTIC_METHOD
+    - SOIL_TEX_SAND_STATISTIC_NUMBER
+    - SOIL_TEX_SILT
+    - SOIL_TEX_SILT_STATISTIC
+    - SOIL_TEX_SILT_STATISTIC_METHOD
+    - SOIL_TEX_SILT_STATISTIC_NUMBER
+    - SOIL_TEX_CLAY
+    - SOIL_TEX_CLAY_STATISTIC
+    - SOIL_TEX_CLAY_STATISTIC_METHOD
+    - SOIL_TEX_CLAY_STATISTIC_NUMBER
+    - SOIL_TEX_ROCK
+    - SOIL_TEX_ROCK_STATISTIC
+    - SOIL_TEX_ROCK_STATISTIC_METHOD
+    - SOIL_TEX_ROCK_STATISTIC_NUMBER
+    - SOIL_TEX_WATER_HOLD_CAP
+    - SOIL_TEX_WATER_HOLD_CAP_STATISTIC
+    - SOIL_TEX_WATER_HOLD_CAP_STATISTIC_METHOD
+    - SOIL_TEX_WATER_HOLD_CAP_STATISTIC_NUMBER
+    - SOIL_TEX_WILT
+    - SOIL_TEX_WILT_STATISTIC
+    - SOIL_TEX_WILT_STATISTIC_METHOD
+    - SOIL_TEX_WILT_STATISTIC_NUMBER
+    - SOIL_TEX_SAT
+    - SOIL_TEX_SAT_STATISTIC
+    - SOIL_TEX_SAT_STATISTIC_METHOD
+    - SOIL_TEX_SAT_STATISTIC_NUMBER
+    - SOIL_TEX_FIELD_CAP
+    - SOIL_TEX_FIELD_CAP_STATISTIC
+    - SOIL_TEX_FIELD_CAP_STATISTIC_METHOD
+    - SOIL_TEX_FIELD_CAP_STATISTIC_NUMBER
+    - SOIL_TEX_PROFILE_ZERO_REF
+    - SOIL_TEX_PROFILE_MIN
+    - SOIL_TEX_PROFILE_MAX
+    - SOIL_TEX_HORIZON
+    - SOIL_TEX_APPROACH
+    - SOIL_TEX_DATE
+    - SOIL_TEX_DATE_UNC
+    - SOIL_TEX_COMMENT
+  GRP_SOIL_WRB_GROUP:
+    from_schema: TEMP
+    slot_usage:
+      SOIL_WRB_GROUP:
+        comments:
+        - WRB (previously FAO) is a soil classification system. It describes soils
+          with a two-level nomenclature comprising the name of a Soil Group and a
+          modifying adjective that serves to identify a soil unit within a Group on
+          the FAO Soil Map of the World. For the tower site, specify the Soil Group
+          only from the predefined list. Do not report a modifying adjective. WRB_GROUP
+          does not need to be reported if SOIL_ORDER is.
+        description: Soil Group for tower site according to the Soil World Reference
+          Base for Soil Resources (WRB)
+        identifier: true
+      SOIL_WRB_GROUP_APPROACH:
+        description: Approach used for assigning Soil WRB Group
+      SOIL_WRB_GROUP_COMMENT:
+        description: Soil WRB Group comments
+    slots:
+    - SOIL_WRB_GROUP
+    - SOIL_WRB_GROUP_APPROACH
+    - SOIL_WRB_GROUP_COMMENT
+  GRP_SWC:
+    from_schema: TEMP
+    slot_usage:
+      SWC:
+        comments:
+        - Report continuous half-hourly or hourly measurements with flux/met data.
+        description: Soil water content (not continuous measurements)
+        identifier: true
+        multivalued: true
+      SWC_APPROACH:
+        description: Soil water content measurement approach
+        multivalued: true
+      SWC_COMMENT:
+        description: Soil water content comments
+        multivalued: true
+      SWC_DATE:
+        comments:
+        - Please report the date at the precision known. Allowed reporting precisions
+          are YYYY, YYYYMM, YYYYMMDD, and YYYYMMDDHHMM. For soil moisture campaigns
+          or temporal averages, SWC_DATE_START and SWC_DATE_END can be used.
+        description: Soil water content measurement date
+        multivalued: true
+        required: true
+      SWC_DATE_END:
+        comments:
+        - End date of a soil moisure measurement campaign or end date of a temporal
+          average. Please report the date at the precision known. Allowed reporting
+          precisions are YYYY, YYYYMM, YYYYMMDD, and YYYYMMDDHHMM.
+        description: End date of Soil water content measurement
+        multivalued: true
+      SWC_DATE_START:
+        comments:
+        - Start date of a soil moisure measurement campaign or start date of a temporal
+          average. Please report the date at the precision known. Allowed reporting
+          precisions are YYYY, YYYYMM, YYYYMMDD, and YYYYMMDDHHMM.
+        description: Start date of Soil water content measurment
+        multivalued: true
+        required: true
+      SWC_DATE_UNC:
+        description: Uncertainty in the Date(s) of Soil water content measurement
+        multivalued: true
+      SWC_HORIZON:
+        comments:
+        - Use soil horizon scheme best suited for your soil. Examples include O, Oa,
+          B, Bt, C.
+        description: Soil water content horizon
+        multivalued: true
+      SWC_PROFILE_MAX:
+        comments:
+        - Profile maximum depth is the vertical distance from profile zero reference
+          to the bottom of soil layer being measured.
+        description: Soil water content profile maximum depth
+        multivalued: true
+      SWC_PROFILE_MIN:
+        comments:
+        - Profile minimum depth is the vertical distance from profile zero reference
+          to the top of soil layer being measured.
+        description: Soil water content profile minimum depth
+        multivalued: true
+      SWC_PROFILE_ZERO_REF:
+        comments:
+        - Profile Zero Reference is the horizontal plane from which the soil profile
+          minimum and maximum depths are measured. For example, top of mineral soil
+          or top of litter layer. Use predefined list.
+        description: Soil water content profile zero reference
+        multivalued: true
+      SWC_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Soil water content statistic
+        multivalued: true
+        required: true
+      SWC_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Soil water content statistic method
+        multivalued: true
+      SWC_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine soil water content statistic
+        multivalued: true
+      SWC_UNIT:
+        comments:
+        - Use the predefined list to specify gravimetric (mass water / mass dry soil)
+          or volumetric (volume water / volume soil) water content.
+        description: Measurement unit of Soil water content
+        multivalued: true
+        required: true
+    slots:
+    - SWC
+    - SWC_STATISTIC
+    - SWC_STATISTIC_METHOD
+    - SWC_STATISTIC_NUMBER
+    - SWC_UNIT
+    - SWC_PROFILE_ZERO_REF
+    - SWC_PROFILE_MIN
+    - SWC_PROFILE_MAX
+    - SWC_HORIZON
+    - SWC_APPROACH
+    - SWC_DATE
+    - SWC_DATE_START
+    - SWC_DATE_END
+    - SWC_DATE_UNC
+    - SWC_COMMENT
+  GRP_WTD:
+    from_schema: TEMP
+    slot_usage:
+      WTD:
+        comments:
+        - Report continuous half-hourly or hourly measurements with flux/met data.
+        description: Water table depth (not continuous measurements)
+        identifier: true
+        multivalued: true
+      WTD_APPROACH:
+        description: Water table depth measurement approach
+        multivalued: true
+      WTD_COMMENT:
+        description: Water table depth comments
+        multivalued: true
+      WTD_DATE:
+        comments:
+        - Please report the date at the precision known. Allowed reporting precisions
+          are YYYY, YYYYMM, YYYYMMDD, and YYYYMMDDHHMM.
+        description: Water table depth measurement date
+        multivalued: true
+        required: true
+      WTD_DATE_UNC:
+        description: Uncertainty in the Water table depth measurement date
+        multivalued: true
+      WTD_STATISTIC:
+        comments:
+        - The statistic for the measurement reported. Use predefined list (e.g., mean,
+          min / max, standard deviation, etc).
+        description: Water table depth statistic
+        multivalued: true
+        required: true
+      WTD_STATISTIC_METHOD:
+        comments:
+        - Method used to generate the reported statistic (e.g., aggregate of individuals,
+          aggregate of sample aggregates) from observations representing the same
+          time period. Use predefined list. The aggregation method is not meant to
+          describe temporal aggregations for example in calculations of higher frequency
+          observations (e.g., sub-minute) to lower frequency observations (e.g., hourly)
+          at a single location.
+        description: Water table depth statistic method
+        multivalued: true
+      WTD_STATISTIC_NUMBER:
+        comments:
+        - Number of observations (samples / replicates) used to calculate the STATISTIC
+          for the reported measurement.
+        description: Number of observations used to determine water table depth statistic
+        multivalued: true
+    slots:
+    - WTD
+    - WTD_STATISTIC
+    - WTD_STATISTIC_METHOD
+    - WTD_STATISTIC_NUMBER
+    - WTD_APPROACH
+    - WTD_DATE
+    - WTD_DATE_UNC
+    - WTD_COMMENT
+default_prefix: TEMP
+default_range: string
+id: TEMP
+imports:
+- linkml:types
+name: TEMP
+prefixes:
+  TEMP: https://example.org/TEMP/
+  linkml: https://w3id.org/linkml/
+slots:
+  PFCURVE_APPROACH:
+    from_schema: TEMP
+  PFCURVE_COMMENT:
+    from_schema: TEMP
+  PFCURVE_DATE:
+    from_schema: TEMP
+  PFCURVE_DATE_UNC:
+    from_schema: TEMP
+  PFCURVE_MP:
+    from_schema: TEMP
+  PFCURVE_MP_STATISTIC:
+    from_schema: TEMP
+  PFCURVE_MP_STATISTIC_METHOD:
+    from_schema: TEMP
+  PFCURVE_MP_STATISTIC_NUMBER:
+    from_schema: TEMP
+  PFCURVE_SWC:
+    from_schema: TEMP
+  PFCURVE_SWC_STATISTIC:
+    from_schema: TEMP
+  PFCURVE_SWC_STATISTIC_METHOD:
+    from_schema: TEMP
+  PFCURVE_SWC_STATISTIC_NUMBER:
+    from_schema: TEMP
+  PFCURVE_SWC_UNIT:
+    from_schema: TEMP
+  SITE_ID:
+    from_schema: TEMP
+  SITE_NAME:
+    from_schema: TEMP
+  SOIL_CHEM_APPROACH:
+    from_schema: TEMP
+  SOIL_CHEM_BD:
+    from_schema: TEMP
+  SOIL_CHEM_BD_STATISTIC:
+    from_schema: TEMP
+  SOIL_CHEM_BD_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_CHEM_BD_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_CHEM_CN_RATIO:
+    from_schema: TEMP
+  SOIL_CHEM_CN_RATIO_STATISTIC:
+    from_schema: TEMP
+  SOIL_CHEM_CN_RATIO_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_CHEM_CN_RATIO_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_CHEM_COMMENT:
+    from_schema: TEMP
+  SOIL_CHEM_C_ORG:
+    from_schema: TEMP
+  SOIL_CHEM_C_ORG_STATISTIC:
+    from_schema: TEMP
+  SOIL_CHEM_C_ORG_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_CHEM_C_ORG_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_CHEM_DATE:
+    from_schema: TEMP
+  SOIL_CHEM_DATE_UNC:
+    from_schema: TEMP
+  SOIL_CHEM_HORIZON:
+    from_schema: TEMP
+  SOIL_CHEM_K:
+    from_schema: TEMP
+  SOIL_CHEM_K_STATISTIC:
+    from_schema: TEMP
+  SOIL_CHEM_K_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_CHEM_K_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_CHEM_NH4:
+    from_schema: TEMP
+  SOIL_CHEM_NH4_STATISTIC:
+    from_schema: TEMP
+  SOIL_CHEM_NH4_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_CHEM_NH4_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_CHEM_NO3:
+    from_schema: TEMP
+  SOIL_CHEM_NO3_STATISTIC:
+    from_schema: TEMP
+  SOIL_CHEM_NO3_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_CHEM_NO3_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_CHEM_N_TOT:
+    from_schema: TEMP
+  SOIL_CHEM_N_TOT_STATISTIC:
+    from_schema: TEMP
+  SOIL_CHEM_N_TOT_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_CHEM_N_TOT_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_CHEM_P:
+    from_schema: TEMP
+  SOIL_CHEM_PH_H2O:
+    from_schema: TEMP
+  SOIL_CHEM_PH_H2O_STATISTIC:
+    from_schema: TEMP
+  SOIL_CHEM_PH_H2O_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_CHEM_PH_H2O_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_CHEM_PH_SALT:
+    from_schema: TEMP
+  SOIL_CHEM_PH_SALT_STATISTIC:
+    from_schema: TEMP
+  SOIL_CHEM_PH_SALT_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_CHEM_PH_SALT_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_CHEM_PROFILE_MAX:
+    from_schema: TEMP
+  SOIL_CHEM_PROFILE_MIN:
+    from_schema: TEMP
+  SOIL_CHEM_PROFILE_ZERO_REF:
+    from_schema: TEMP
+  SOIL_CHEM_P_STATISTIC:
+    from_schema: TEMP
+  SOIL_CHEM_P_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_CHEM_P_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_CLASSIFICATION:
+    from_schema: TEMP
+  SOIL_CLASSIFICATION_APPROACH:
+    from_schema: TEMP
+  SOIL_CLASSIFICATION_COMMENT:
+    from_schema: TEMP
+  SOIL_CLASSIFICATION_TAXONOMY:
+    from_schema: TEMP
+  SOIL_DEPTH:
+    from_schema: TEMP
+  SOIL_DEPTH_APPROACH:
+    from_schema: TEMP
+  SOIL_DEPTH_COMMENT:
+    from_schema: TEMP
+  SOIL_DEPTH_DATE:
+    from_schema: TEMP
+  SOIL_DEPTH_DATE_UNC:
+    from_schema: TEMP
+  SOIL_DEPTH_ORG:
+    from_schema: TEMP
+  SOIL_DEPTH_ORG_STATISTIC:
+    from_schema: TEMP
+  SOIL_DEPTH_ORG_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_DEPTH_ORG_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_DEPTH_STATISTIC:
+    from_schema: TEMP
+  SOIL_DEPTH_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_DEPTH_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_ORDER:
+    from_schema: TEMP
+  SOIL_ORDER_APPROACH:
+    from_schema: TEMP
+  SOIL_ORDER_COMMENT:
+    from_schema: TEMP
+  SOIL_SERIES:
+    from_schema: TEMP
+  SOIL_SERIES_APPROACH:
+    from_schema: TEMP
+  SOIL_SERIES_COMMENT:
+    from_schema: TEMP
+  SOIL_STOCK_APPROACH:
+    from_schema: TEMP
+  SOIL_STOCK_COMMENT:
+    from_schema: TEMP
+  SOIL_STOCK_C_ORG:
+    from_schema: TEMP
+  SOIL_STOCK_C_ORG_STATISTIC:
+    from_schema: TEMP
+  SOIL_STOCK_C_ORG_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_STOCK_C_ORG_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_STOCK_DATE:
+    from_schema: TEMP
+  SOIL_STOCK_DATE_UNC:
+    from_schema: TEMP
+  SOIL_STOCK_HORIZON:
+    from_schema: TEMP
+  SOIL_STOCK_K:
+    from_schema: TEMP
+  SOIL_STOCK_K_STATISTIC:
+    from_schema: TEMP
+  SOIL_STOCK_K_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_STOCK_K_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_STOCK_NH4:
+    from_schema: TEMP
+  SOIL_STOCK_NH4_STATISTIC:
+    from_schema: TEMP
+  SOIL_STOCK_NH4_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_STOCK_NH4_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_STOCK_NO3:
+    from_schema: TEMP
+  SOIL_STOCK_NO3_STATISTIC:
+    from_schema: TEMP
+  SOIL_STOCK_NO3_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_STOCK_NO3_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_STOCK_N_TOT:
+    from_schema: TEMP
+  SOIL_STOCK_N_TOT_STATISTIC:
+    from_schema: TEMP
+  SOIL_STOCK_N_TOT_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_STOCK_N_TOT_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_STOCK_P:
+    from_schema: TEMP
+  SOIL_STOCK_PROFILE_MAX:
+    from_schema: TEMP
+  SOIL_STOCK_PROFILE_MIN:
+    from_schema: TEMP
+  SOIL_STOCK_PROFILE_ZERO_REF:
+    from_schema: TEMP
+  SOIL_STOCK_P_STATISTIC:
+    from_schema: TEMP
+  SOIL_STOCK_P_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_STOCK_P_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_TEX_APPROACH:
+    from_schema: TEMP
+  SOIL_TEX_CLAY:
+    from_schema: TEMP
+  SOIL_TEX_CLAY_STATISTIC:
+    from_schema: TEMP
+  SOIL_TEX_CLAY_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_TEX_CLAY_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_TEX_COMMENT:
+    from_schema: TEMP
+  SOIL_TEX_DATE:
+    from_schema: TEMP
+  SOIL_TEX_DATE_UNC:
+    from_schema: TEMP
+  SOIL_TEX_FIELD_CAP:
+    from_schema: TEMP
+  SOIL_TEX_FIELD_CAP_STATISTIC:
+    from_schema: TEMP
+  SOIL_TEX_FIELD_CAP_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_TEX_FIELD_CAP_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_TEX_HORIZON:
+    from_schema: TEMP
+  SOIL_TEX_PROFILE_MAX:
+    from_schema: TEMP
+  SOIL_TEX_PROFILE_MIN:
+    from_schema: TEMP
+  SOIL_TEX_PROFILE_ZERO_REF:
+    from_schema: TEMP
+  SOIL_TEX_ROCK:
+    from_schema: TEMP
+  SOIL_TEX_ROCK_STATISTIC:
+    from_schema: TEMP
+  SOIL_TEX_ROCK_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_TEX_ROCK_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_TEX_SAND:
+    from_schema: TEMP
+  SOIL_TEX_SAND_STATISTIC:
+    from_schema: TEMP
+  SOIL_TEX_SAND_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_TEX_SAND_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_TEX_SAT:
+    from_schema: TEMP
+  SOIL_TEX_SAT_STATISTIC:
+    from_schema: TEMP
+  SOIL_TEX_SAT_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_TEX_SAT_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_TEX_SILT:
+    from_schema: TEMP
+  SOIL_TEX_SILT_STATISTIC:
+    from_schema: TEMP
+  SOIL_TEX_SILT_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_TEX_SILT_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_TEX_WATER_HOLD_CAP:
+    from_schema: TEMP
+  SOIL_TEX_WATER_HOLD_CAP_STATISTIC:
+    from_schema: TEMP
+  SOIL_TEX_WATER_HOLD_CAP_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_TEX_WATER_HOLD_CAP_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_TEX_WILT:
+    from_schema: TEMP
+  SOIL_TEX_WILT_STATISTIC:
+    from_schema: TEMP
+  SOIL_TEX_WILT_STATISTIC_METHOD:
+    from_schema: TEMP
+  SOIL_TEX_WILT_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SOIL_WRB_GROUP:
+    from_schema: TEMP
+  SOIL_WRB_GROUP_APPROACH:
+    from_schema: TEMP
+  SOIL_WRB_GROUP_COMMENT:
+    from_schema: TEMP
+  SUBMISSION_CONTACT_EMAIL:
+    from_schema: TEMP
+  SUBMISSION_CONTACT_NAME:
+    from_schema: TEMP
+  SUBMISSION_DATE:
+    from_schema: TEMP
+  SWC:
+    from_schema: TEMP
+  SWC_APPROACH:
+    from_schema: TEMP
+  SWC_COMMENT:
+    from_schema: TEMP
+  SWC_DATE:
+    from_schema: TEMP
+  SWC_DATE_END:
+    from_schema: TEMP
+  SWC_DATE_START:
+    from_schema: TEMP
+  SWC_DATE_UNC:
+    from_schema: TEMP
+  SWC_HORIZON:
+    from_schema: TEMP
+  SWC_PROFILE_MAX:
+    from_schema: TEMP
+  SWC_PROFILE_MIN:
+    from_schema: TEMP
+  SWC_PROFILE_ZERO_REF:
+    from_schema: TEMP
+  SWC_STATISTIC:
+    from_schema: TEMP
+  SWC_STATISTIC_METHOD:
+    from_schema: TEMP
+  SWC_STATISTIC_NUMBER:
+    from_schema: TEMP
+  SWC_UNIT:
+    from_schema: TEMP
+  WTD:
+    from_schema: TEMP
+  WTD_APPROACH:
+    from_schema: TEMP
+  WTD_COMMENT:
+    from_schema: TEMP
+  WTD_DATE:
+    from_schema: TEMP
+  WTD_DATE_UNC:
+    from_schema: TEMP
+  WTD_STATISTIC:
+    from_schema: TEMP
+  WTD_STATISTIC_METHOD:
+    from_schema: TEMP
+  WTD_STATISTIC_NUMBER:
+    from_schema: TEMP

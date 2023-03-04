@@ -1,0 +1,412 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/gsvr/badm-soil> a owl:Ontology ;
+    rdfs:label "gsvr-badm-soil" ;
+    dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
+    linkml:generation_date "2022-12-05T22:20:13" ;
+    linkml:metamodel_version "1.7.0" ;
+    linkml:source_file "badm-soil.yaml" ;
+    linkml:source_file_date "2022-12-05T22:17:42" ;
+    linkml:source_file_size 238 .
+
+linkml:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" .
+
+linkml:SlotDefinition a owl:Class ;
+    rdfs:label "slot_definition" .
+
+linkml:SubsetDefinition a owl:Class ;
+    rdfs:label "subset_definition" .
+
+linkml:TypeDefinition a owl:Class ;
+    rdfs:label "type_definition" .
+
+linkml:topValue a owl:DatatypeProperty ;
+    rdfs:label "value" .
+
+<https://example.org/TEMP/PROFILEZEROREF#Other> a owl:Class,
+        <https://example.org/TEMP/PROFILEZEROREF> ;
+    rdfs:label "Other" .
+
+<https://example.org/TEMP/PROFILEZEROREF#Top+of+mineral+soil> a owl:Class,
+        <https://example.org/TEMP/PROFILEZEROREF> ;
+    rdfs:label "Top of mineral soil" .
+
+<https://example.org/TEMP/PROFILEZEROREF#Top+of+surface> a owl:Class,
+        <https://example.org/TEMP/PROFILEZEROREF> ;
+    rdfs:label "Top of surface" .
+
+<https://example.org/TEMP/SOILCLASSTAXON#NRCS> a owl:Class,
+        <https://example.org/TEMP/SOILCLASSTAXON> ;
+    rdfs:label "NRCS" .
+
+<https://example.org/TEMP/SOILCLASSTAXON#Other> a owl:Class,
+        <https://example.org/TEMP/SOILCLASSTAXON> ;
+    rdfs:label "Other" .
+
+<https://example.org/TEMP/SOILCLASSTAXON#WRB> a owl:Class,
+        <https://example.org/TEMP/SOILCLASSTAXON> ;
+    rdfs:label "WRB" .
+
+<https://example.org/TEMP/SOILGROUP#Acrisol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Acrisol" .
+
+<https://example.org/TEMP/SOILGROUP#Albeluvisol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Albeluvisol" .
+
+<https://example.org/TEMP/SOILGROUP#Alisol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Alisol" .
+
+<https://example.org/TEMP/SOILGROUP#Andosol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Andosol" .
+
+<https://example.org/TEMP/SOILGROUP#Anthrosol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Anthrosol" .
+
+<https://example.org/TEMP/SOILGROUP#Arenosol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Arenosol" .
+
+<https://example.org/TEMP/SOILGROUP#Calcisol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Calcisol" .
+
+<https://example.org/TEMP/SOILGROUP#Cambisol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Cambisol" .
+
+<https://example.org/TEMP/SOILGROUP#Chernozem> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Chernozem" .
+
+<https://example.org/TEMP/SOILGROUP#Cryosol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Cryosol" .
+
+<https://example.org/TEMP/SOILGROUP#Durisol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Durisol" .
+
+<https://example.org/TEMP/SOILGROUP#Ferralsol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Ferralsol" .
+
+<https://example.org/TEMP/SOILGROUP#Fluvisol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Fluvisol" .
+
+<https://example.org/TEMP/SOILGROUP#Gleysol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Gleysol" .
+
+<https://example.org/TEMP/SOILGROUP#Gypsisol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Gypsisol" .
+
+<https://example.org/TEMP/SOILGROUP#Histosol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Histosol" .
+
+<https://example.org/TEMP/SOILGROUP#Kastanozem> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Kastanozem" .
+
+<https://example.org/TEMP/SOILGROUP#Leptosol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Leptosol" .
+
+<https://example.org/TEMP/SOILGROUP#Lixisol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Lixisol" .
+
+<https://example.org/TEMP/SOILGROUP#Luvisol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Luvisol" .
+
+<https://example.org/TEMP/SOILGROUP#Nitisol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Nitisol" .
+
+<https://example.org/TEMP/SOILGROUP#Phaeozem> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Phaeozem" .
+
+<https://example.org/TEMP/SOILGROUP#Planosol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Planosol" .
+
+<https://example.org/TEMP/SOILGROUP#Plinthosol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Plinthosol" .
+
+<https://example.org/TEMP/SOILGROUP#Podzol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Podzol" .
+
+<https://example.org/TEMP/SOILGROUP#Regosol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Regosol" .
+
+<https://example.org/TEMP/SOILGROUP#Solonchak> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Solonchak" .
+
+<https://example.org/TEMP/SOILGROUP#Solonetz> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Solonetz" .
+
+<https://example.org/TEMP/SOILGROUP#Technosol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Technosol" .
+
+<https://example.org/TEMP/SOILGROUP#Umbrisol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Umbrisol" .
+
+<https://example.org/TEMP/SOILGROUP#Vertisol> a owl:Class,
+        <https://example.org/TEMP/SOILGROUP> ;
+    rdfs:label "Vertisol" .
+
+<https://example.org/TEMP/SOILORDER#Alfisols> a owl:Class,
+        <https://example.org/TEMP/SOILORDER> ;
+    rdfs:label "Alfisols" .
+
+<https://example.org/TEMP/SOILORDER#Andisols> a owl:Class,
+        <https://example.org/TEMP/SOILORDER> ;
+    rdfs:label "Andisols" .
+
+<https://example.org/TEMP/SOILORDER#Aridisols> a owl:Class,
+        <https://example.org/TEMP/SOILORDER> ;
+    rdfs:label "Aridisols" .
+
+<https://example.org/TEMP/SOILORDER#Entisols> a owl:Class,
+        <https://example.org/TEMP/SOILORDER> ;
+    rdfs:label "Entisols" .
+
+<https://example.org/TEMP/SOILORDER#Gelisols> a owl:Class,
+        <https://example.org/TEMP/SOILORDER> ;
+    rdfs:label "Gelisols" .
+
+<https://example.org/TEMP/SOILORDER#Histosols> a owl:Class,
+        <https://example.org/TEMP/SOILORDER> ;
+    rdfs:label "Histosols" .
+
+<https://example.org/TEMP/SOILORDER#Inceptisols> a owl:Class,
+        <https://example.org/TEMP/SOILORDER> ;
+    rdfs:label "Inceptisols" .
+
+<https://example.org/TEMP/SOILORDER#Mollisols> a owl:Class,
+        <https://example.org/TEMP/SOILORDER> ;
+    rdfs:label "Mollisols" .
+
+<https://example.org/TEMP/SOILORDER#Oxisols> a owl:Class,
+        <https://example.org/TEMP/SOILORDER> ;
+    rdfs:label "Oxisols" .
+
+<https://example.org/TEMP/SOILORDER#Spodosols> a owl:Class,
+        <https://example.org/TEMP/SOILORDER> ;
+    rdfs:label "Spodosols" .
+
+<https://example.org/TEMP/SOILORDER#Ultisols> a owl:Class,
+        <https://example.org/TEMP/SOILORDER> ;
+    rdfs:label "Ultisols" .
+
+<https://example.org/TEMP/SOILORDER#Vertisols> a owl:Class,
+        <https://example.org/TEMP/SOILORDER> ;
+    rdfs:label "Vertisols" .
+
+<https://example.org/TEMP/STATISTIC#10th+Percentile> a owl:Class,
+        <https://example.org/TEMP/STATISTIC> ;
+    rdfs:label "10th Percentile" .
+
+<https://example.org/TEMP/STATISTIC#1st+Percentile> a owl:Class,
+        <https://example.org/TEMP/STATISTIC> ;
+    rdfs:label "1st Percentile" .
+
+<https://example.org/TEMP/STATISTIC#25th+Percentile> a owl:Class,
+        <https://example.org/TEMP/STATISTIC> ;
+    rdfs:label "25th Percentile" .
+
+<https://example.org/TEMP/STATISTIC#5th+Percentile> a owl:Class,
+        <https://example.org/TEMP/STATISTIC> ;
+    rdfs:label "5th Percentile" .
+
+<https://example.org/TEMP/STATISTIC#75th+Percentile> a owl:Class,
+        <https://example.org/TEMP/STATISTIC> ;
+    rdfs:label "75th Percentile" .
+
+<https://example.org/TEMP/STATISTIC#90th+Percentile> a owl:Class,
+        <https://example.org/TEMP/STATISTIC> ;
+    rdfs:label "90th Percentile" .
+
+<https://example.org/TEMP/STATISTIC#95th+Percentile> a owl:Class,
+        <https://example.org/TEMP/STATISTIC> ;
+    rdfs:label "95th Percentile" .
+
+<https://example.org/TEMP/STATISTIC#99th+Percentile> a owl:Class,
+        <https://example.org/TEMP/STATISTIC> ;
+    rdfs:label "99th Percentile" .
+
+<https://example.org/TEMP/STATISTIC#Maximum> a owl:Class,
+        <https://example.org/TEMP/STATISTIC> ;
+    rdfs:label "Maximum" .
+
+<https://example.org/TEMP/STATISTIC#Mean> a owl:Class,
+        <https://example.org/TEMP/STATISTIC> ;
+    rdfs:label "Mean" .
+
+<https://example.org/TEMP/STATISTIC#Measurement+Uncertainty> a owl:Class,
+        <https://example.org/TEMP/STATISTIC> ;
+    rdfs:label "Measurement Uncertainty" .
+
+<https://example.org/TEMP/STATISTIC#Median+-+50th+Percentile> a owl:Class,
+        <https://example.org/TEMP/STATISTIC> ;
+    rdfs:label "Median - 50th Percentile" .
+
+<https://example.org/TEMP/STATISTIC#Minimum> a owl:Class,
+        <https://example.org/TEMP/STATISTIC> ;
+    rdfs:label "Minimum" .
+
+<https://example.org/TEMP/STATISTIC#Single+observation> a owl:Class,
+        <https://example.org/TEMP/STATISTIC> ;
+    rdfs:label "Single observation" .
+
+<https://example.org/TEMP/STATISTIC#Standard+Deviation> a owl:Class,
+        <https://example.org/TEMP/STATISTIC> ;
+    rdfs:label "Standard Deviation" .
+
+<https://example.org/TEMP/STATISTICMETHOD#Aggregate+of+individual+observations> a owl:Class,
+        <https://example.org/TEMP/STATISTICMETHOD> ;
+    rdfs:label "Aggregate of individual observations" .
+
+<https://example.org/TEMP/STATISTICMETHOD#Aggregate+of+sample+aggregates> a owl:Class,
+        <https://example.org/TEMP/STATISTICMETHOD> ;
+    rdfs:label "Aggregate of sample aggregates" .
+
+<https://example.org/TEMP/STATISTICMETHOD#Expert+estimate> a owl:Class,
+        <https://example.org/TEMP/STATISTICMETHOD> ;
+    rdfs:label "Expert estimate" .
+
+<https://example.org/TEMP/UNITSWC> a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "UNIT_SWC" ;
+    owl:unionOf ( <https://example.org/TEMP/UNITSWC#Gravimetric> <https://example.org/TEMP/UNITSWC#Volumetric> ) ;
+    linkml:permissible_values <https://example.org/TEMP/UNITSWC#Gravimetric>,
+        <https://example.org/TEMP/UNITSWC#Volumetric> .
+
+<https://example.org/TEMP/UNITSWC#Gravimetric> a owl:Class,
+        <https://example.org/TEMP/UNITSWC> ;
+    rdfs:label "Gravimetric" .
+
+<https://example.org/TEMP/UNITSWC#Volumetric> a owl:Class,
+        <https://example.org/TEMP/UNITSWC> ;
+    rdfs:label "Volumetric" .
+
+<https://example.org/TEMP/PROFILEZEROREF> a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "PROFILE_ZERO_REF" ;
+    owl:unionOf ( <https://example.org/TEMP/PROFILEZEROREF#Other> <https://example.org/TEMP/PROFILEZEROREF#Top+of+mineral+soil> <https://example.org/TEMP/PROFILEZEROREF#Top+of+surface> ) ;
+    linkml:permissible_values <https://example.org/TEMP/PROFILEZEROREF#Other>,
+        <https://example.org/TEMP/PROFILEZEROREF#Top+of+mineral+soil>,
+        <https://example.org/TEMP/PROFILEZEROREF#Top+of+surface> .
+
+<https://example.org/TEMP/SOILCLASSTAXON> a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "SOIL_CLASS_TAXON" ;
+    owl:unionOf ( <https://example.org/TEMP/SOILCLASSTAXON#NRCS> <https://example.org/TEMP/SOILCLASSTAXON#Other> <https://example.org/TEMP/SOILCLASSTAXON#WRB> ) ;
+    linkml:permissible_values <https://example.org/TEMP/SOILCLASSTAXON#NRCS>,
+        <https://example.org/TEMP/SOILCLASSTAXON#Other>,
+        <https://example.org/TEMP/SOILCLASSTAXON#WRB> .
+
+<https://example.org/TEMP/STATISTICMETHOD> a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "STATISTIC_METHOD" ;
+    owl:unionOf ( <https://example.org/TEMP/STATISTICMETHOD#Aggregate+of+individual+observations> <https://example.org/TEMP/STATISTICMETHOD#Aggregate+of+sample+aggregates> <https://example.org/TEMP/STATISTICMETHOD#Expert+estimate> ) ;
+    linkml:permissible_values <https://example.org/TEMP/STATISTICMETHOD#Aggregate+of+individual+observations>,
+        <https://example.org/TEMP/STATISTICMETHOD#Aggregate+of+sample+aggregates>,
+        <https://example.org/TEMP/STATISTICMETHOD#Expert+estimate> .
+
+<https://example.org/TEMP/SOILORDER> a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "SOIL_ORDER" ;
+    owl:unionOf ( <https://example.org/TEMP/SOILORDER#Alfisols> <https://example.org/TEMP/SOILORDER#Andisols> <https://example.org/TEMP/SOILORDER#Aridisols> <https://example.org/TEMP/SOILORDER#Entisols> <https://example.org/TEMP/SOILORDER#Gelisols> <https://example.org/TEMP/SOILORDER#Histosols> <https://example.org/TEMP/SOILORDER#Inceptisols> <https://example.org/TEMP/SOILORDER#Mollisols> <https://example.org/TEMP/SOILORDER#Oxisols> <https://example.org/TEMP/SOILORDER#Spodosols> <https://example.org/TEMP/SOILORDER#Ultisols> <https://example.org/TEMP/SOILORDER#Vertisols> ) ;
+    linkml:permissible_values <https://example.org/TEMP/SOILORDER#Alfisols>,
+        <https://example.org/TEMP/SOILORDER#Andisols>,
+        <https://example.org/TEMP/SOILORDER#Aridisols>,
+        <https://example.org/TEMP/SOILORDER#Entisols>,
+        <https://example.org/TEMP/SOILORDER#Gelisols>,
+        <https://example.org/TEMP/SOILORDER#Histosols>,
+        <https://example.org/TEMP/SOILORDER#Inceptisols>,
+        <https://example.org/TEMP/SOILORDER#Mollisols>,
+        <https://example.org/TEMP/SOILORDER#Oxisols>,
+        <https://example.org/TEMP/SOILORDER#Spodosols>,
+        <https://example.org/TEMP/SOILORDER#Ultisols>,
+        <https://example.org/TEMP/SOILORDER#Vertisols> .
+
+<https://example.org/TEMP/STATISTIC> a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "STATISTIC" ;
+    owl:unionOf ( <https://example.org/TEMP/STATISTIC#10th+Percentile> <https://example.org/TEMP/STATISTIC#1st+Percentile> <https://example.org/TEMP/STATISTIC#25th+Percentile> <https://example.org/TEMP/STATISTIC#5th+Percentile> <https://example.org/TEMP/STATISTIC#75th+Percentile> <https://example.org/TEMP/STATISTIC#90th+Percentile> <https://example.org/TEMP/STATISTIC#95th+Percentile> <https://example.org/TEMP/STATISTIC#99th+Percentile> <https://example.org/TEMP/STATISTIC#Maximum> <https://example.org/TEMP/STATISTIC#Mean> <https://example.org/TEMP/STATISTIC#Measurement+Uncertainty> <https://example.org/TEMP/STATISTIC#Median+-+50th+Percentile> <https://example.org/TEMP/STATISTIC#Minimum> <https://example.org/TEMP/STATISTIC#Single+observation> <https://example.org/TEMP/STATISTIC#Standard+Deviation> ) ;
+    linkml:permissible_values <https://example.org/TEMP/STATISTIC#10th+Percentile>,
+        <https://example.org/TEMP/STATISTIC#1st+Percentile>,
+        <https://example.org/TEMP/STATISTIC#25th+Percentile>,
+        <https://example.org/TEMP/STATISTIC#5th+Percentile>,
+        <https://example.org/TEMP/STATISTIC#75th+Percentile>,
+        <https://example.org/TEMP/STATISTIC#90th+Percentile>,
+        <https://example.org/TEMP/STATISTIC#95th+Percentile>,
+        <https://example.org/TEMP/STATISTIC#99th+Percentile>,
+        <https://example.org/TEMP/STATISTIC#Maximum>,
+        <https://example.org/TEMP/STATISTIC#Mean>,
+        <https://example.org/TEMP/STATISTIC#Measurement+Uncertainty>,
+        <https://example.org/TEMP/STATISTIC#Median+-+50th+Percentile>,
+        <https://example.org/TEMP/STATISTIC#Minimum>,
+        <https://example.org/TEMP/STATISTIC#Single+observation>,
+        <https://example.org/TEMP/STATISTIC#Standard+Deviation> .
+
+<https://example.org/TEMP/SOILGROUP> a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "SOIL_GROUP" ;
+    owl:unionOf ( <https://example.org/TEMP/SOILGROUP#Acrisol> <https://example.org/TEMP/SOILGROUP#Albeluvisol> <https://example.org/TEMP/SOILGROUP#Alisol> <https://example.org/TEMP/SOILGROUP#Andosol> <https://example.org/TEMP/SOILGROUP#Anthrosol> <https://example.org/TEMP/SOILGROUP#Arenosol> <https://example.org/TEMP/SOILGROUP#Calcisol> <https://example.org/TEMP/SOILGROUP#Cambisol> <https://example.org/TEMP/SOILGROUP#Chernozem> <https://example.org/TEMP/SOILGROUP#Cryosol> <https://example.org/TEMP/SOILGROUP#Durisol> <https://example.org/TEMP/SOILGROUP#Ferralsol> <https://example.org/TEMP/SOILGROUP#Fluvisol> <https://example.org/TEMP/SOILGROUP#Gleysol> <https://example.org/TEMP/SOILGROUP#Gypsisol> <https://example.org/TEMP/SOILGROUP#Histosol> <https://example.org/TEMP/SOILGROUP#Kastanozem> <https://example.org/TEMP/SOILGROUP#Leptosol> <https://example.org/TEMP/SOILGROUP#Lixisol> <https://example.org/TEMP/SOILGROUP#Luvisol> <https://example.org/TEMP/SOILGROUP#Nitisol> <https://example.org/TEMP/SOILGROUP#Phaeozem> <https://example.org/TEMP/SOILGROUP#Planosol> <https://example.org/TEMP/SOILGROUP#Plinthosol> <https://example.org/TEMP/SOILGROUP#Podzol> <https://example.org/TEMP/SOILGROUP#Regosol> <https://example.org/TEMP/SOILGROUP#Solonchak> <https://example.org/TEMP/SOILGROUP#Solonetz> <https://example.org/TEMP/SOILGROUP#Technosol> <https://example.org/TEMP/SOILGROUP#Umbrisol> <https://example.org/TEMP/SOILGROUP#Vertisol> ) ;
+    linkml:permissible_values <https://example.org/TEMP/SOILGROUP#Acrisol>,
+        <https://example.org/TEMP/SOILGROUP#Albeluvisol>,
+        <https://example.org/TEMP/SOILGROUP#Alisol>,
+        <https://example.org/TEMP/SOILGROUP#Andosol>,
+        <https://example.org/TEMP/SOILGROUP#Anthrosol>,
+        <https://example.org/TEMP/SOILGROUP#Arenosol>,
+        <https://example.org/TEMP/SOILGROUP#Calcisol>,
+        <https://example.org/TEMP/SOILGROUP#Cambisol>,
+        <https://example.org/TEMP/SOILGROUP#Chernozem>,
+        <https://example.org/TEMP/SOILGROUP#Cryosol>,
+        <https://example.org/TEMP/SOILGROUP#Durisol>,
+        <https://example.org/TEMP/SOILGROUP#Ferralsol>,
+        <https://example.org/TEMP/SOILGROUP#Fluvisol>,
+        <https://example.org/TEMP/SOILGROUP#Gleysol>,
+        <https://example.org/TEMP/SOILGROUP#Gypsisol>,
+        <https://example.org/TEMP/SOILGROUP#Histosol>,
+        <https://example.org/TEMP/SOILGROUP#Kastanozem>,
+        <https://example.org/TEMP/SOILGROUP#Leptosol>,
+        <https://example.org/TEMP/SOILGROUP#Lixisol>,
+        <https://example.org/TEMP/SOILGROUP#Luvisol>,
+        <https://example.org/TEMP/SOILGROUP#Nitisol>,
+        <https://example.org/TEMP/SOILGROUP#Phaeozem>,
+        <https://example.org/TEMP/SOILGROUP#Planosol>,
+        <https://example.org/TEMP/SOILGROUP#Plinthosol>,
+        <https://example.org/TEMP/SOILGROUP#Podzol>,
+        <https://example.org/TEMP/SOILGROUP#Regosol>,
+        <https://example.org/TEMP/SOILGROUP#Solonchak>,
+        <https://example.org/TEMP/SOILGROUP#Solonetz>,
+        <https://example.org/TEMP/SOILGROUP#Technosol>,
+        <https://example.org/TEMP/SOILGROUP#Umbrisol>,
+        <https://example.org/TEMP/SOILGROUP#Vertisol> .
+
+

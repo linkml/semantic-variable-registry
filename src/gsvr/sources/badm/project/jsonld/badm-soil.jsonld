@@ -1,0 +1,489 @@
+{
+  "name": "gsvr-badm-soil",
+  "id": "https://w3id.org/gsvr/badm-soil",
+  "imports": [
+    "linkml:types",
+    "badm-soil-enums",
+    "badm-soil-main",
+    "badm-soil-explanations"
+  ],
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "prefixes": [
+    {
+      "prefix_prefix": "badm",
+      "prefix_reference": "https://w3id.org/gsvr/badm-soil/"
+    },
+    {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    }
+  ],
+  "default_prefix": "https://w3id.org/gsvr/badm-soil/",
+  "default_range": "string",
+  "types": [
+    {
+      "name": "string",
+      "definition_uri": "https://w3id.org/linkml/String",
+      "description": "A character string",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "integer",
+      "definition_uri": "https://w3id.org/linkml/Integer",
+      "description": "An integer",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "int",
+      "uri": "http://www.w3.org/2001/XMLSchema#integer",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "boolean",
+      "definition_uri": "https://w3id.org/linkml/Boolean",
+      "description": "A binary (true or false) value",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "Bool",
+      "uri": "http://www.w3.org/2001/XMLSchema#boolean",
+      "repr": "bool",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "float",
+      "definition_uri": "https://w3id.org/linkml/Float",
+      "description": "A real number that conforms to the xsd:float specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#float",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "double",
+      "definition_uri": "https://w3id.org/linkml/Double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#double",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "decimal",
+      "definition_uri": "https://w3id.org/linkml/Decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "Decimal",
+      "uri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "time",
+      "definition_uri": "https://w3id.org/linkml/Time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners do not work with straight date or time"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date",
+      "definition_uri": "https://w3id.org/linkml/Date",
+      "description": "a date (year, month and day) in an idealized calendar",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDDate",
+      "uri": "http://www.w3.org/2001/XMLSchema#date",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "datetime",
+      "definition_uri": "https://w3id.org/linkml/Datetime",
+      "description": "The combination of a date and time",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDDateTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date_or_datetime",
+      "definition_uri": "https://w3id.org/linkml/DateOrDatetime",
+      "description": "Either a date or a datetime",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "https://w3id.org/linkml/DateOrDatetime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uriorcurie",
+      "definition_uri": "https://w3id.org/linkml/Uriorcurie",
+      "description": "a URI or a CURIE",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "URIorCURIE",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uri",
+      "definition_uri": "https://w3id.org/linkml/Uri",
+      "description": "a complete URI",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "URI",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "ncname",
+      "definition_uri": "https://w3id.org/linkml/Ncname",
+      "description": "Prefix part of CURIE",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NCName",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "objectidentifier",
+      "definition_uri": "https://w3id.org/linkml/Objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "comments": [
+        "Used for inheritence and type checking"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "ElementIdentifier",
+      "uri": "http://www.w3.org/ns/shex#iri",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "nodeidentifier",
+      "definition_uri": "https://w3id.org/linkml/Nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NodeIdentifier",
+      "uri": "http://www.w3.org/ns/shex#nonLiteral",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    }
+  ],
+  "enums": [
+    {
+      "name": "PROFILE_ZERO_REF",
+      "definition_uri": "https://example.org/TEMP/PROFILEZEROREF",
+      "from_schema": "TEMP",
+      "permissible_values": [
+        {
+          "text": "Other",
+          "description": "See additional information in Approach / Comments"
+        },
+        {
+          "text": "Top of mineral soil",
+          "description": "Top of mineral soil not including organic layers"
+        },
+        {
+          "text": "Top of surface",
+          "description": "On top of all organic layers"
+        }
+      ]
+    },
+    {
+      "name": "SOIL_CLASS_TAXON",
+      "definition_uri": "https://example.org/TEMP/SOILCLASSTAXON",
+      "from_schema": "TEMP",
+      "permissible_values": [
+        {
+          "text": "NRCS"
+        },
+        {
+          "text": "Other",
+          "description": "See additional information in Approach / Comments"
+        },
+        {
+          "text": "WRB",
+          "description": "Previously FAO"
+        }
+      ]
+    },
+    {
+      "name": "SOIL_GROUP",
+      "definition_uri": "https://example.org/TEMP/SOILGROUP",
+      "from_schema": "TEMP",
+      "permissible_values": [
+        {
+          "text": "Acrisol"
+        },
+        {
+          "text": "Albeluvisol"
+        },
+        {
+          "text": "Alisol"
+        },
+        {
+          "text": "Andosol"
+        },
+        {
+          "text": "Anthrosol"
+        },
+        {
+          "text": "Arenosol"
+        },
+        {
+          "text": "Calcisol"
+        },
+        {
+          "text": "Cambisol"
+        },
+        {
+          "text": "Chernozem"
+        },
+        {
+          "text": "Cryosol"
+        },
+        {
+          "text": "Durisol"
+        },
+        {
+          "text": "Ferralsol"
+        },
+        {
+          "text": "Fluvisol"
+        },
+        {
+          "text": "Gleysol"
+        },
+        {
+          "text": "Gypsisol"
+        },
+        {
+          "text": "Histosol"
+        },
+        {
+          "text": "Kastanozem"
+        },
+        {
+          "text": "Leptosol"
+        },
+        {
+          "text": "Lixisol"
+        },
+        {
+          "text": "Luvisol"
+        },
+        {
+          "text": "Nitisol"
+        },
+        {
+          "text": "Phaeozem"
+        },
+        {
+          "text": "Planosol"
+        },
+        {
+          "text": "Plinthosol"
+        },
+        {
+          "text": "Podzol"
+        },
+        {
+          "text": "Regosol"
+        },
+        {
+          "text": "Solonchak"
+        },
+        {
+          "text": "Solonetz"
+        },
+        {
+          "text": "Technosol"
+        },
+        {
+          "text": "Umbrisol"
+        },
+        {
+          "text": "Vertisol"
+        }
+      ]
+    },
+    {
+      "name": "SOIL_ORDER",
+      "definition_uri": "https://example.org/TEMP/SOILORDER",
+      "from_schema": "TEMP",
+      "permissible_values": [
+        {
+          "text": "Alfisols"
+        },
+        {
+          "text": "Andisols"
+        },
+        {
+          "text": "Aridisols"
+        },
+        {
+          "text": "Entisols"
+        },
+        {
+          "text": "Gelisols"
+        },
+        {
+          "text": "Histosols"
+        },
+        {
+          "text": "Inceptisols"
+        },
+        {
+          "text": "Mollisols"
+        },
+        {
+          "text": "Oxisols"
+        },
+        {
+          "text": "Spodosols"
+        },
+        {
+          "text": "Ultisols"
+        },
+        {
+          "text": "Vertisols"
+        }
+      ]
+    },
+    {
+      "name": "STATISTIC",
+      "definition_uri": "https://example.org/TEMP/STATISTIC",
+      "from_schema": "TEMP",
+      "permissible_values": [
+        {
+          "text": "10th Percentile",
+          "description": "Quantile at 10% of distribution"
+        },
+        {
+          "text": "1st Percentile",
+          "description": "Quantile at 1% of distribution"
+        },
+        {
+          "text": "25th Percentile",
+          "description": "Quantile at 25% of distribution"
+        },
+        {
+          "text": "5th Percentile",
+          "description": "Quantile at 5% of distribution"
+        },
+        {
+          "text": "75th Percentile",
+          "description": "Quantile at 75% of distribution"
+        },
+        {
+          "text": "90th Percentile",
+          "description": "Quantile at 90% of distribution"
+        },
+        {
+          "text": "95th Percentile",
+          "description": "Quantile at 95% of distribution"
+        },
+        {
+          "text": "99th Percentile",
+          "description": "Quantile at 99% of distribution"
+        },
+        {
+          "text": "Maximum",
+          "description": "Maximum value"
+        },
+        {
+          "text": "Mean",
+          "description": "Average (mean) value of sample population"
+        },
+        {
+          "text": "Measurement Uncertainty",
+          "description": "Report uncertainty as a plus or minus value in the measurement units. For example, enter 1.5 for +/- 1.5 units. Uncertainty may be reported from the instrument's specifications, determined empirically, or estimated by the tower team. Please describe such details in Approach. For uncertainty values that are better described by a range, a percent, or other, please enter information in Comments."
+        },
+        {
+          "text": "Median - 50th Percentile",
+          "description": "Median - Quantile at 50% of distribution"
+        },
+        {
+          "text": "Minimum",
+          "description": "Minimum value"
+        },
+        {
+          "text": "Single observation",
+          "description": "Single observation that is not a calculated statistic of replicates either to get a robust estimate or for spatial variability analysis. For example a single biomass observation may be the vegetation harvested in a single 1 x 1 meter area."
+        },
+        {
+          "text": "Standard Deviation",
+          "description": "Standard deviation may be reported from a sample population that consists of individual or aggregated samples (observations). If the distinction is important, specify in STATISTIC_METHOD or Comments."
+        }
+      ]
+    },
+    {
+      "name": "STATISTIC_METHOD",
+      "definition_uri": "https://example.org/TEMP/STATISTICMETHOD",
+      "from_schema": "TEMP",
+      "permissible_values": [
+        {
+          "text": "Aggregate of individual observations",
+          "description": "The statistic is aggregated from individual observations located within the site. Observations may be grouped into sample areas (e.g., plots) within the site but those groupings are ignored. Statistics generated from individual observations directly yield information on the site generally. The statistic may represent spatial characteristics of the measurement within the site (e.g., spatial heterogeneity) and/or characteristics due to other factors (e.g., population variability)."
+        },
+        {
+          "text": "Aggregate of sample aggregates",
+          "description": "The statistic is aggregated from aggregated individual observations located in sample areas within the site. For example, individual observations are made in 5 sample plots within a site. \"Aggregate of sample aggregates\" is used if a plot statistic (e.g., Mean) is first calculated, and then the plot values are aggregated to calculate the site statistic. Statistics generated by this approach are often used to highlight the spatial characteristics within the site (i.e., the spatial heterogeneity of measurement within the site)."
+        },
+        {
+          "text": "Expert estimate",
+          "description": "Estimate made by expert familiar with site"
+        }
+      ]
+    },
+    {
+      "name": "UNIT_SWC",
+      "definition_uri": "https://example.org/TEMP/UNITSWC",
+      "from_schema": "TEMP",
+      "permissible_values": [
+        {
+          "text": "Gravimetric"
+        },
+        {
+          "text": "Volumetric"
+        }
+      ]
+    }
+  ],
+  "metamodel_version": "1.7.0",
+  "source_file": "badm-soil.yaml",
+  "source_file_date": "2022-12-05T22:17:42",
+  "source_file_size": 238,
+  "generation_date": "2022-12-05T22:20:10",
+  "@type": "SchemaDefinition",
+  "@context": [
+    "project/jsonld/badm-soil.context.jsonld",
+    "https://w3id.org/linkml/types.context.jsonld",
+    "badm-soil-enums.context.jsonld",
+    {
+      "@base": "https://w3id.org/gsvr/badm-soil/"
+    }
+  ]
+}

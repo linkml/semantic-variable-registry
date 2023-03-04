@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "gsvr"
+version = "0.1.0"
+description = ""
+authors = ["cmungall <cjm@berkeleybop.org>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+linkml-runtime = "^1.4.5"
+
+[tool.poetry.group.dev.dependencies]
+linkml = "^1.4.4"
+linkml-owl = "^0.2.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

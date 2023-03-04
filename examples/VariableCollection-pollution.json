@@ -1,0 +1,24 @@
+{
+  "code": "environment.pollution",
+  "description": "pollution measurement variables",
+  "variables": {
+    "pollutant_amount": {
+      "variable_forms": {
+        "pollutant_amount_verbatim": {
+          "category": "MEASUREMENT_TUPLE",
+          "structured_mappings": [
+            {
+              "object_id": "MIXS:0000107"
+            }
+          ]
+        },
+        "pollutant_amount_lead_unit_ppm": {
+          "unit": {
+            "symbol": "ppm"
+          }
+        }
+      }
+    }
+  },
+  "@type": "dict"
+}

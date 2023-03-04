@@ -1,0 +1,881 @@
+default_prefix: TEMP
+default_range: string
+id: TEMP
+imports:
+- linkml:types
+name: TEMP
+prefixes:
+  TEMP: https://example.org/TEMP/
+  linkml: https://w3id.org/linkml/
+slots:
+  PFCURVE_APPROACH:
+    description: Water retention (pF) curve measurement approach
+    from_schema: TEMP
+    range: string
+  PFCURVE_COMMENT:
+    description: Water retention (pF) curve comments
+    from_schema: TEMP
+    range: string
+  PFCURVE_DATE:
+    description: Water retention (pF) curve measurement date
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: YYYYMMDDHHMM
+  PFCURVE_DATE_UNC:
+    description: Uncertainty in the Water retention (pF) curve measurement date
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: days
+  PFCURVE_MP:
+    description: Water retention (pF) curve matric potential
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: kPa
+  PFCURVE_MP_STATISTIC:
+    description: Water retention (pF) curve matric potential statistic
+    from_schema: TEMP
+    range: STATISTIC
+  PFCURVE_MP_STATISTIC_METHOD:
+    description: Water retention (pF) curve matric potential statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  PFCURVE_MP_STATISTIC_NUMBER:
+    description: Number of observations used to determine water retention (pF) curve
+      matric potential statistic
+    from_schema: TEMP
+    range: integer
+  PFCURVE_SWC:
+    description: Water retention (pF) curve soil water content (SWC)
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: '%'
+  PFCURVE_SWC_STATISTIC:
+    description: Water retention (pF) curve soil water content (SWC) statistic
+    from_schema: TEMP
+    range: STATISTIC
+  PFCURVE_SWC_STATISTIC_METHOD:
+    description: Water retention (pF) curve soil water content (SWC) statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  PFCURVE_SWC_STATISTIC_NUMBER:
+    description: Number of observations used to determine water retention (pF) curve
+      soil water content (SWC) statistic
+    from_schema: TEMP
+    range: integer
+  PFCURVE_SWC_UNIT:
+    description: Measurement unit of Water retention (pF) curve soil water content
+      (SWC)
+    from_schema: TEMP
+    range: UNIT_SWC
+  SITE_ID:
+    description: Six character site identifier. MANDATORY if site is already registered
+    from_schema: TEMP
+    range: string
+  SITE_NAME:
+    description: Site name
+    from_schema: TEMP
+    range: string
+  SOIL_CHEM_APPROACH:
+    description: Soil chemistry measurement approach
+    from_schema: TEMP
+    range: string
+  SOIL_CHEM_BD:
+    description: Soil bulk density
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: g cm-3
+  SOIL_CHEM_BD_STATISTIC:
+    description: Soil bulk density statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_CHEM_BD_STATISTIC_METHOD:
+    description: Soil bulk density statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_CHEM_BD_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil bulk density statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_CHEM_CN_RATIO:
+    description: Soil C/N ratio
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: '% by mass'
+  SOIL_CHEM_CN_RATIO_STATISTIC:
+    description: Soil C/N ratio statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_CHEM_CN_RATIO_STATISTIC_METHOD:
+    description: Soil C/N ratio statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_CHEM_CN_RATIO_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil C/N ratio statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_CHEM_COMMENT:
+    description: Soil chemistry comments
+    from_schema: TEMP
+    range: string
+  SOIL_CHEM_C_ORG:
+    description: Soil organic carbon concentration
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: g C kg soil-1
+  SOIL_CHEM_C_ORG_STATISTIC:
+    description: Soil organic carbon concentration statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_CHEM_C_ORG_STATISTIC_METHOD:
+    description: Soil organic carbon concentration statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_CHEM_C_ORG_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil organic carbon concentration
+      statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_CHEM_DATE:
+    description: Soil chemistry measurement sampling date
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: YYYYMMDDHHMM
+  SOIL_CHEM_DATE_UNC:
+    description: Uncertainty in the Soil chemistry measurement sampling date
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: days
+  SOIL_CHEM_HORIZON:
+    description: Soil chemistry profile horizon
+    from_schema: TEMP
+    range: string
+  SOIL_CHEM_K:
+    description: Soil potassium concentration
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: g K kg soil-1
+  SOIL_CHEM_K_STATISTIC:
+    description: Soil potassium concentration statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_CHEM_K_STATISTIC_METHOD:
+    description: Soil potassium concentration statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_CHEM_K_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil potassium concentration
+      statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_CHEM_NH4:
+    description: Soil ammonium concentration
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: g NH4 kg soil-1
+  SOIL_CHEM_NH4_STATISTIC:
+    description: Soil ammonium concentration statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_CHEM_NH4_STATISTIC_METHOD:
+    description: Soil ammonium concentration statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_CHEM_NH4_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil ammonium concentration
+      statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_CHEM_NO3:
+    description: Soil nitrate concentration
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: g NO3 kg soil-1
+  SOIL_CHEM_NO3_STATISTIC:
+    description: Soil nitrate concentration statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_CHEM_NO3_STATISTIC_METHOD:
+    description: Soil nitrate concentration statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_CHEM_NO3_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil nitrate concentration
+      statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_CHEM_N_TOT:
+    description: Soil total nitrogen concentration
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: g N kg soil-1
+  SOIL_CHEM_N_TOT_STATISTIC:
+    description: Soil total nitrogen concentration statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_CHEM_N_TOT_STATISTIC_METHOD:
+    description: Soil total nitrogen concentration statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_CHEM_N_TOT_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil total nitrogen concentration
+      statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_CHEM_P:
+    description: Soil phosphorus concentration
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: g P kg soil-1
+  SOIL_CHEM_PH_H2O:
+    description: Soil pH by H2O
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: decimal number
+  SOIL_CHEM_PH_H2O_STATISTIC:
+    description: Soil pH by H2O statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_CHEM_PH_H2O_STATISTIC_METHOD:
+    description: Soil pH by H2O statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_CHEM_PH_H2O_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil pH by H2O statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_CHEM_PH_SALT:
+    description: Soil pH by CaCl2 or other salt
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: decimal number
+  SOIL_CHEM_PH_SALT_STATISTIC:
+    description: Soil pH by CaCl2 or other salt statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_CHEM_PH_SALT_STATISTIC_METHOD:
+    description: Soil pH by CaCl2 or other salt statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_CHEM_PH_SALT_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil pH by CaCl2 or other
+      salt statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_CHEM_PROFILE_MAX:
+    description: Soil chemistry profile maximum depth
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: cm
+  SOIL_CHEM_PROFILE_MIN:
+    description: Soil chemistry profile minimum depth
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: cm
+  SOIL_CHEM_PROFILE_ZERO_REF:
+    description: Soil chemistry profile zero reference
+    from_schema: TEMP
+    range: PROFILE_ZERO_REF
+  SOIL_CHEM_P_STATISTIC:
+    description: Soil phosphorus concentration statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_CHEM_P_STATISTIC_METHOD:
+    description: Soil phosphorus concentration statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_CHEM_P_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil phosphorus concentration
+      statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_CLASSIFICATION:
+    description: Soil Classification for tower site according to a taxonomy
+    from_schema: TEMP
+    range: string
+  SOIL_CLASSIFICATION_APPROACH:
+    description: Approach used for assigning Soil Classification
+    from_schema: TEMP
+    range: string
+  SOIL_CLASSIFICATION_COMMENT:
+    description: Soil Classification comments
+    from_schema: TEMP
+    range: string
+  SOIL_CLASSIFICATION_TAXONOMY:
+    description: Specify the taxonomy used for Soil Classification
+    from_schema: TEMP
+    range: SOIL_CLASS_TAXON
+  SOIL_DEPTH:
+    description: Soil depth
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: cm
+  SOIL_DEPTH_APPROACH:
+    description: Soil depth measurement approach
+    from_schema: TEMP
+    range: string
+  SOIL_DEPTH_COMMENT:
+    description: Soil depth comments
+    from_schema: TEMP
+    range: string
+  SOIL_DEPTH_DATE:
+    description: Soil depth measurement date
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: YYYYMMDDHHMM
+  SOIL_DEPTH_DATE_UNC:
+    description: Uncertainty in the Soil depth measurement date
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: days
+  SOIL_DEPTH_ORG:
+    description: Soil depth of organic horizon
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: cm
+  SOIL_DEPTH_ORG_STATISTIC:
+    description: Soil depth of organic horizon statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_DEPTH_ORG_STATISTIC_METHOD:
+    description: Soil depth of organic horizon statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_DEPTH_ORG_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil depth of organic horizon
+      statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_DEPTH_STATISTIC:
+    description: Soil depth statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_DEPTH_STATISTIC_METHOD:
+    description: Soil depth statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_DEPTH_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil depth statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_ORDER:
+    description: Soil Order for tower site according to National Resource Conservation
+      Service (NRCS) Soil Taxonomy
+    from_schema: TEMP
+    range: SOIL_ORDER
+  SOIL_ORDER_APPROACH:
+    description: Approach used for assigning Soil Order
+    from_schema: TEMP
+    range: string
+  SOIL_ORDER_COMMENT:
+    description: Soil Order comments
+    from_schema: TEMP
+    range: string
+  SOIL_SERIES:
+    description: Soil Series for tower site according to a taxonomy
+    from_schema: TEMP
+    range: string
+  SOIL_SERIES_APPROACH:
+    description: Approach used for assigning Soil Series
+    from_schema: TEMP
+    range: string
+  SOIL_SERIES_COMMENT:
+    description: Soil Series comments
+    from_schema: TEMP
+    range: string
+  SOIL_STOCK_APPROACH:
+    description: Soil stock measurement approach
+    from_schema: TEMP
+    range: string
+  SOIL_STOCK_COMMENT:
+    description: Soil stock comments
+    from_schema: TEMP
+    range: string
+  SOIL_STOCK_C_ORG:
+    description: Soil organic carbon stock
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: g C m-2
+  SOIL_STOCK_C_ORG_STATISTIC:
+    description: Soil organic carbon stock statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_STOCK_C_ORG_STATISTIC_METHOD:
+    description: Soil organic carbon stock statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_STOCK_C_ORG_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil organic carbon stock
+      statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_STOCK_DATE:
+    description: Soil stock measurement sampling date
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: YYYYMMDDHHMM
+  SOIL_STOCK_DATE_UNC:
+    description: Uncertainty in the Soil stock measurement sampling date
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: days
+  SOIL_STOCK_HORIZON:
+    description: Soil stock profile horizon
+    from_schema: TEMP
+    range: string
+  SOIL_STOCK_K:
+    description: Soil potassium stock
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: g K m-2
+  SOIL_STOCK_K_STATISTIC:
+    description: Soil potassium stock statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_STOCK_K_STATISTIC_METHOD:
+    description: Soil potassium stock statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_STOCK_K_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil potassium stock statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_STOCK_NH4:
+    description: Soil ammonium stock
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: g NH4 m-2
+  SOIL_STOCK_NH4_STATISTIC:
+    description: Soil ammonium stock statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_STOCK_NH4_STATISTIC_METHOD:
+    description: Soil ammonium stock statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_STOCK_NH4_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil ammonium stock statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_STOCK_NO3:
+    description: Soil nitrate stock
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: g NO3 m-2
+  SOIL_STOCK_NO3_STATISTIC:
+    description: Soil nitrate stock statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_STOCK_NO3_STATISTIC_METHOD:
+    description: Soil nitrate stock statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_STOCK_NO3_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil nitrate stock statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_STOCK_N_TOT:
+    description: Soil total nitrogen stock
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: g N m-2
+  SOIL_STOCK_N_TOT_STATISTIC:
+    description: Soil total nitrogen stock statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_STOCK_N_TOT_STATISTIC_METHOD:
+    description: Soil total nitrogen stock statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_STOCK_N_TOT_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil total nitrogen stock
+      statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_STOCK_P:
+    description: Soil phosphorus stock
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: g P m-2
+  SOIL_STOCK_PROFILE_MAX:
+    description: Soil stock profile maximum depth
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: cm
+  SOIL_STOCK_PROFILE_MIN:
+    description: Soil stock profile minimum depth
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: cm
+  SOIL_STOCK_PROFILE_ZERO_REF:
+    description: Soil stock profile zero reference
+    from_schema: TEMP
+    range: PROFILE_ZERO_REF
+  SOIL_STOCK_P_STATISTIC:
+    description: Soil phosphorus stock statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_STOCK_P_STATISTIC_METHOD:
+    description: Soil phosphorus stock statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_STOCK_P_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil phosphorus stock statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_TEX_APPROACH:
+    description: Soil texture measurement approach
+    from_schema: TEMP
+    range: string
+  SOIL_TEX_CLAY:
+    description: Clay content
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: '%'
+  SOIL_TEX_CLAY_STATISTIC:
+    description: Clay content statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_TEX_CLAY_STATISTIC_METHOD:
+    description: Clay content statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_TEX_CLAY_STATISTIC_NUMBER:
+    description: Number of observations used to determine clay content statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_TEX_COMMENT:
+    description: Soil texture comments
+    from_schema: TEMP
+    range: string
+  SOIL_TEX_DATE:
+    description: Soil texture measurement date
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: YYYYMMDDHHMM
+  SOIL_TEX_DATE_UNC:
+    description: Uncertainty in the Soil texture measurement date
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: days
+  SOIL_TEX_FIELD_CAP:
+    description: Field capacity
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: '%vol'
+  SOIL_TEX_FIELD_CAP_STATISTIC:
+    description: Field capacity statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_TEX_FIELD_CAP_STATISTIC_METHOD:
+    description: Field capacity statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_TEX_FIELD_CAP_STATISTIC_NUMBER:
+    description: Number of observations used to determine field capacity statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_TEX_HORIZON:
+    description: Soil texture profile horizon
+    from_schema: TEMP
+    range: string
+  SOIL_TEX_PROFILE_MAX:
+    description: Soil texture profile maximum depth
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: cm
+  SOIL_TEX_PROFILE_MIN:
+    description: Soil texture profile minimum depth
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: cm
+  SOIL_TEX_PROFILE_ZERO_REF:
+    description: Soil texture profile zero reference
+    from_schema: TEMP
+    range: PROFILE_ZERO_REF
+  SOIL_TEX_ROCK:
+    description: Rock content (>2mm)
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: '%'
+  SOIL_TEX_ROCK_STATISTIC:
+    description: Rock content (>2mm) statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_TEX_ROCK_STATISTIC_METHOD:
+    description: Rock content (>2mm) statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_TEX_ROCK_STATISTIC_NUMBER:
+    description: Number of observations used to determine rock content (>2mm) statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_TEX_SAND:
+    description: Sand content
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: '%'
+  SOIL_TEX_SAND_STATISTIC:
+    description: Sand content statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_TEX_SAND_STATISTIC_METHOD:
+    description: Sand content statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_TEX_SAND_STATISTIC_NUMBER:
+    description: Number of observations used to determine sand content statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_TEX_SAT:
+    description: Soil water saturation point
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: '%vol'
+  SOIL_TEX_SAT_STATISTIC:
+    description: Soil water saturation point statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_TEX_SAT_STATISTIC_METHOD:
+    description: Soil water saturation point statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_TEX_SAT_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil water saturation point
+      statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_TEX_SILT:
+    description: Silt content
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: '%'
+  SOIL_TEX_SILT_STATISTIC:
+    description: Silt content statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_TEX_SILT_STATISTIC_METHOD:
+    description: Silt content statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_TEX_SILT_STATISTIC_NUMBER:
+    description: Number of observations used to determine silt content statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_TEX_WATER_HOLD_CAP:
+    description: Soil water holding capacity
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: '%vol'
+  SOIL_TEX_WATER_HOLD_CAP_STATISTIC:
+    description: Soil water holding capacity statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_TEX_WATER_HOLD_CAP_STATISTIC_METHOD:
+    description: Soil water holding capacity statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_TEX_WATER_HOLD_CAP_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil water holding capacity
+      statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_TEX_WILT:
+    description: Wilting point
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: '%vol'
+  SOIL_TEX_WILT_STATISTIC:
+    description: Wilting point statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SOIL_TEX_WILT_STATISTIC_METHOD:
+    description: Wilting point statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SOIL_TEX_WILT_STATISTIC_NUMBER:
+    description: Number of observations used to determine wilting point statistic
+    from_schema: TEMP
+    range: integer
+  SOIL_WRB_GROUP:
+    description: Soil Group for tower site according to the Soil World Reference Base
+      for Soil Resources (WRB)
+    from_schema: TEMP
+    range: SOIL_GROUP
+  SOIL_WRB_GROUP_APPROACH:
+    description: Approach used for assigning Soil WRB Group
+    from_schema: TEMP
+    range: string
+  SOIL_WRB_GROUP_COMMENT:
+    description: Soil WRB Group comments
+    from_schema: TEMP
+    range: string
+  SUBMISSION_CONTACT_EMAIL:
+    description: E-mail address of the person who submitted this template
+    from_schema: TEMP
+    range: string
+  SUBMISSION_CONTACT_NAME:
+    description: Name of person who submitted this template
+    from_schema: TEMP
+    range: string
+  SUBMISSION_DATE:
+    description: Date this submission was last edited/modified
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: YYYYMMDD
+  SWC:
+    description: Soil water content (not continuous measurements)
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: '%'
+  SWC_APPROACH:
+    description: Soil water content measurement approach
+    from_schema: TEMP
+    range: string
+  SWC_COMMENT:
+    description: Soil water content comments
+    from_schema: TEMP
+    range: string
+  SWC_DATE:
+    description: Soil water content measurement date
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: YYYYMMDDHHMM
+  SWC_DATE_END:
+    description: End date of Soil water content measurement
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: YYYYMMDDHHMM
+  SWC_DATE_START:
+    description: Start date of Soil water content measurment
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: YYYYMMDDHHMM
+  SWC_DATE_UNC:
+    description: Uncertainty in the Date(s) of Soil water content measurement
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: days
+  SWC_HORIZON:
+    description: Soil water content horizon
+    from_schema: TEMP
+    range: string
+  SWC_PROFILE_MAX:
+    description: Soil water content profile maximum depth
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: cm
+  SWC_PROFILE_MIN:
+    description: Soil water content profile minimum depth
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: cm
+  SWC_PROFILE_ZERO_REF:
+    description: Soil water content profile zero reference
+    from_schema: TEMP
+    range: PROFILE_ZERO_REF
+  SWC_STATISTIC:
+    description: Soil water content statistic
+    from_schema: TEMP
+    range: STATISTIC
+  SWC_STATISTIC_METHOD:
+    description: Soil water content statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  SWC_STATISTIC_NUMBER:
+    description: Number of observations used to determine soil water content statistic
+    from_schema: TEMP
+    range: integer
+  SWC_UNIT:
+    description: Measurement unit of Soil water content
+    from_schema: TEMP
+    range: UNIT_SWC
+  WTD:
+    description: Water table depth (not continuous measurements)
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: m
+  WTD_APPROACH:
+    description: Water table depth measurement approach
+    from_schema: TEMP
+    range: string
+  WTD_COMMENT:
+    description: Water table depth comments
+    from_schema: TEMP
+    range: string
+  WTD_DATE:
+    description: Water table depth measurement date
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: YYYYMMDDHHMM
+  WTD_DATE_UNC:
+    description: Uncertainty in the Water table depth measurement date
+    from_schema: TEMP
+    range: float
+    unit:
+      symbol: days
+  WTD_STATISTIC:
+    description: Water table depth statistic
+    from_schema: TEMP
+    range: STATISTIC
+  WTD_STATISTIC_METHOD:
+    description: Water table depth statistic method
+    from_schema: TEMP
+    range: STATISTIC_METHOD
+  WTD_STATISTIC_NUMBER:
+    description: Number of observations used to determine water table depth statistic
+    from_schema: TEMP
+    range: integer

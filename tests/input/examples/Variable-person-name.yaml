@@ -1,0 +1,19 @@
+name: person_identifier_concept
+description: person identifier, general grouping
+property_of: Person
+subtypes:
+  person_unique_identifier_concept:
+    description: a unique id for a person, general concept
+    subtypes:
+      orcid_identifier:
+        variable_forms:
+          orcid_identifier_verbatim: {}
+          orcid_identifier_numeric_portion: {}
+          orcid_identifier_url: {}
+  person_name_concept:
+    description: person name, general concept
+    property_of: Person
+    variable_forms:
+      person_name_verbatim:
+        description: person name, as a verbatim string
+        property_of: Person

@@ -1,0 +1,5 @@
+inputs:
+  - name: soil
+    version: v2021
+    url: https://ameriflux.lbl.gov/wp-content/uploads/2021/03/BADM-Soil-v2021-Template.xlsx
+    format: xlsx

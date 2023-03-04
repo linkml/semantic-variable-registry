@@ -1,0 +1,11 @@
+id: https://w3id.org/gsvr/badm-soil
+name: gsvr-badm-soil
+prefixes:
+  badm: https://w3id.org/gsvr/badm-soil/
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+  - badm-soil-enums
+  - badm-soil-main
+  - badm-soil-explanations
+  

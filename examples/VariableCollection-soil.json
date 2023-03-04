@@ -1,0 +1,131 @@
+{
+  "code": "environment.soil",
+  "description": "soil measurement variables",
+  "variables": {
+    "soil_depth": {
+      "description": "soil depth, general concept",
+      "allowed_units": [
+        "m",
+        "cm",
+        "Inch"
+      ],
+      "quantity_type": "Depth",
+      "variable_forms": {
+        "soil_depth_unit_m": {
+          "description": "test"
+        },
+        "soil_depth_measurement_verbatim": {},
+        "soil_depth_measurement": {}
+      }
+    },
+    "soil_altitude": {
+      "description": "soil altitude, general concept",
+      "allowed_units": [
+        "m",
+        "km"
+      ]
+    },
+    "soil_classification": {
+      "description": "soil classification",
+      "category": "CATEGORICAL",
+      "embedded_value_set": {
+        "permissible_values": {
+          "Acrisol": {},
+          "Albeluvisol": {}
+        }
+      }
+    },
+    "soil_chemistry": {
+      "category": "GROUPING",
+      "subtypes": {
+        "soil_concentration_nh4_unit_grams_per_kilogram": {
+          "structured_mappings": [
+            {
+              "predicate_id": "skos:exactmatch",
+              "object_id": "badm:SOIL_CHEM_NH4"
+            }
+          ],
+          "description": "Soil ammonium concentration",
+          "unit": {
+            "symbol": "g NH4 kg soil-1",
+            "ucum_code": "g/kg"
+          },
+          "numerator_variable": "soil_amount_nh4_unit_grams",
+          "denominator_variable": "soil_volume_kg",
+          "quantification_of": "NH4",
+          "variable_forms": {
+            "soil_concentration_nh4_method": {
+              "category": "ANCILLARY"
+            }
+          }
+        },
+        "soil_ratio_carbon_to_nitrogen_unit_percent": {
+          "structured_mappings": [
+            {
+              "predicate_id": "skos:exactmatch",
+              "object_id": "badm:SOIL_CHEM_CN_RATIO"
+            }
+          ],
+          "description": "Soil carbon to nitrogen ratio",
+          "unit": {
+            "symbol": "pct",
+            "ucum_code": "%"
+          },
+          "numerator_variable": "soil_amount_carbon",
+          "denominator_variable": "soil_amount_nitrogen",
+          "quantification_of": "CarbonNitrogenMixture",
+          "variable_forms": {
+            "soil_ratio_carbon_to_nitrogen_method": {
+              "category": "ANCILLARY"
+            }
+          }
+        }
+      }
+    }
+  },
+  "physical_substances": {
+    "Soil": {
+      "structured_mappings": [
+        {
+          "predicate_id": "owl:equivalentClass",
+          "object_id": "ENVO:00001998",
+          "object_label": "soil"
+        }
+      ]
+    }
+  },
+  "quantity_types": {
+    "Depth": {
+      "structured_mappings": [
+        {
+          "predicate_id": "owl:equivalentClass",
+          "object_id": "PATO:0001595",
+          "object_label": "depth"
+        }
+      ]
+    },
+    "Altitude": {
+      "structured_mappings": [
+        {
+          "predicate_id": "skos:closeMatch",
+          "object_id": "PATO:0000119",
+          "object_label": "height"
+        }
+      ]
+    }
+  },
+  "measurables": {
+    "RegionOfSoil": {},
+    "NH4": {
+      "title": "ammonium",
+      "structured_mappings": [
+        {
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:28938",
+          "object_label": "ammonium"
+        }
+      ]
+    }
+  },
+  "@type": "dict"
+}

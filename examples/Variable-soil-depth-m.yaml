@@ -1,0 +1,10 @@
+name: soil_depth_unit_m
+description: soil depth measured in meters
+unit:
+  ucum_code: m
+  symbol: meter
+quantity_type: Depth
+measured_in: Soil
+relationships:
+- predicate: UnitFormOf
+  object: soil_depth

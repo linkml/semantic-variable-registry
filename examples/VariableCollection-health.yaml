@@ -1,0 +1,26 @@
+code: health.activities
+variables:
+  smoking_related:
+    category: GROUPING
+    subtypes:
+      smoking_boolean:
+        description_as_question: Do you smoke?
+        has_value_domain: Boolean
+      smoking_packs_per_week:
+        description_as_question: How many packets do you smoke in a week?
+        embedded_value_set:
+          permissible_values:
+            None:
+              description: Do not smoke
+            1-2:
+              description: one to two
+            '>2':
+              description: more than two
+value_domains:
+  Boolean:
+    uri: xsd:boolean
+  URL:
+    description: a Uniform Resource Locator
+    uri: xsd:anyURI
+  String:
+    uri: xsd:string

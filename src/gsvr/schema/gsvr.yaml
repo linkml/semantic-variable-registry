@@ -1,0 +1,247 @@
+id: https://w3id.org/linkml/gsvr
+name: global-semantic-variable-registry
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  gsvr: https://w3id.org/linkml/gsvr/
+  sssom: https://w3id.org/linkml/sssom/
+  schema: http://schema.org/
+  dcterms: http://purl.org/dc/terms/
+  _base: https://example.org/
+default_prefix: gsvr
+default_range: string
+
+imports:
+  - linkml:types
+  - linkml:units
+  - linkml:meta
+    
+types:
+  UnitReference:
+    typeof: string
+
+classes:
+  CodeableConcept:
+    description: >-
+      A general grouping for any entity that can be catalogued in a vocabulary
+    exact_mappings:
+      - skos:Concept
+    attributes:
+      name:
+        identifier: true
+      unique_name:
+        description: >-
+          Formed by concatenating the `collection code` with the `name`.
+        examples:
+          - value: environment.soil.soil_depth_in_meters
+      structured_mappings:
+        slot_uri: sssom:mappings
+        description: >-
+          mappings from this variable concept to variables in other databases and concepts in other
+          ontologies and vocabularies.
+        multivalued: true
+        range: StructuredMapping
+      title:
+        slot_uri: dcterms:title
+        conforms_to: linkml:title
+        description: >-
+          human readable title for this concept
+      description:
+        slot_uri: skos:definition
+        description: >-
+          description of this concept
+      sources:
+        slot_uri: dcterms:source
+        multivalued: true
+        description: >-
+          place where this concept was sourced from
+
+  Variable:
+    is_a: CodeableConcept
+    description: >-
+      A CodeableConcept that can be used to type any piece of information that varies within and across datasets
+    class_uri: schema:variableMeasured
+    conforms_to: linkml:SlotDefinition
+    attributes:
+      pid:
+        description: >-
+          a unique persistent identifier, used to unambiguously identify this concept
+        range: uriorcurie
+        comments:
+          - may be minted as part of publication
+      structured_descriptions:
+        # TODO: fill this out
+      description_as_question:
+        description: >-
+          the description of the variable as presented as a question to the agent recording the measurement
+      aliases:
+        description: >-
+          list of string denoting other names or synonyms for this variable
+        multivalued: true
+      structured_aliases:
+        slot_uri: skosxl:altLabel
+        # TODO
+      category:
+        range: VariableCategoryEnum
+      variable_forms:
+        description: >-
+          the same variable expressed different ways, for example, mass_in_kg is a variable form of mass
+        inlined: true
+        range: Variable
+        multivalued: true
+      subtypes:
+        inlined: true
+        range: Variable
+        multivalued: true
+        description: >-
+          subtypes connecting a grouping variable to more specific ones
+      numerator_variable:
+        range: Variable
+        description: >-
+          for ratio variables, this is the variable that is the numerator.
+      denominator_variable:
+        range: Variable
+        description: >-
+          for ratio variables, this is the variable that is the denominator.
+      unit:
+        range: UnitOfMeasure
+        comments:
+          - use for unit level only
+      allowed_units:
+        range: UnitReference
+        multivalued: true
+        comments:
+          - use for non-unit level only
+      preferred_unit:
+        range: UnitReference
+      has_value_domain:
+        range: ValueDomain
+        comments:
+          - use for non-unit level only
+      relationships:
+        range: VariableRelationship
+        multivalued: true
+      status:
+      quantity_type:
+        range: uriorcurie
+      embedded_value_set:
+        range: anonymous_enum_expression
+      named_value_set:
+      allowed_named_value_sets:
+      property_of:
+        range: Measurable
+      allowed_property_of:
+        range: Measurable
+        multivalued: true
+      quantification_of:
+        range: Measurable
+      context:
+        range: MeasurementContext
+      allowed_contexts:
+      measured_in:
+        range: PhysicalSubstance
+      allowed_measured_in:
+      measured_using:
+        range: Device
+        multivalued: true
+      aggregate_function:
+        comments:
+          - e.g. maximum of
+
+  UnitLevelVariable:
+    is_a: Variable
+    classification_rules:
+      - is_a: Variable
+        slot_conditions:
+          unit:
+            required: true
+
+  VariableRelationship:
+    attributes:
+      predicate:
+        ifabsent: string(related_to)
+      object:
+        range: Variable
+        required: true
+
+  VariableCollection:
+    attributes:
+      code:
+      title:
+      structured_imports:
+        multivalued: true
+      description:
+      variables:
+        range: Variable
+        inlined: true
+        multivalued: true
+      quantity_types:
+        range: QuantityType
+        inlined: true
+        multivalued: true
+      measurables:
+        range: Measurable
+        inlined: true
+        multivalued: true
+      physical_substances:
+        range: PhysicalSubstance
+        inlined: true
+        multivalued: true
+      measurement_contexts:
+        range: MeasurementContext
+        inlined: true
+        multivalued: true
+      devices:
+        range: Device
+        inlined: true
+        multivalued: true
+      value_domains:
+        range: ValueDomain
+        inlined: true
+        multivalued: true
+
+  QuantityType:
+    is_a: CodeableConcept
+  PhysicalEntityOrPhenomena:
+    is_a: CodeableConcept
+  PhysicalEntity:
+    is_a: PhysicalEntityOrPhenomena
+  PhysicalSubstance:
+    is_a: PhysicalEntity
+  Measurable:
+    is_a: PhysicalEntity
+  MeasurementContext:
+    is_a: PhysicalEntityOrPhenomena
+  Device:
+    is_a: PhysicalEntity
+
+  ValueDomain:
+    is_a: CodeableConcept
+    attributes:
+      uri:
+        range: uriorcurie
+
+  StructuredMapping:
+    attributes:
+      object_id:
+      object_label:
+      predicate_id:
+
+enums:
+  VariableCategoryEnum:
+    permissible_values:
+      UNSPECIFIED:
+        description: the level of specificity is unknown or unspecified
+      GROUPING:
+        description: a non-specified grouping of variables
+      UNIT_UNSPECIFIED:
+        description: the precise quantity is known but the unit is unspecified
+      UNIT:
+        description: both quantity and unit are known
+      MEASUREMENT_VERBATIM:
+      MEASUREMENT_OBJECT:
+      VERBATIM:
+      ANCILLARY:
+      CATEGORICAL:
+      CATEGORICAL_ORDINAL:
+      MEASUREMENT_TUPLE:

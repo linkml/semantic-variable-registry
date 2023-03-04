@@ -1,0 +1,8 @@
+{
+   "_comments": "Auto generated from badm-soil.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-12-05T22:20:09\n    Schema: gsvr-badm-soil\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/gsvr/badm-soil\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "@context": {
+      "badm": "https://w3id.org/gsvr/badm-soil/",
+      "linkml": "https://w3id.org/linkml/",
+      "@vocab": "https://w3id.org/gsvr/badm-soil/"
+   }
+}

@@ -1,0 +1,22 @@
+code: investigative.sample
+description: sample variables
+variables:
+  sample_mass:
+    description: soil nass, general concept
+    allowed_units: [g, kg]
+    quantity_type: Mass
+  sample_storage_location:
+    structured_mappings:
+      - object_id: MIXS:0000755
+  sample_storage_temperature:
+    structured_mappings:
+      - object_id: MIXS:0000110
+    allowed_units: [degC]
+  sample_storage_duration:
+    structured_mappings:
+      - object_id: MIXS:0000116
+    #allowed_units: [ degC ]
+quantity_types:
+  Mass: {}
+measurables:
+  Sample: {}

@@ -1,0 +1,5 @@
+@prefix gsvr: <https://w3id.org/linkml/gsvr/> .
+
+[] a gsvr:VariableCollection ;
+    gsvr:description "soil" .
+
