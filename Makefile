@@ -13,6 +13,9 @@ all: project test
 project: python
 	$(RUN) gen-project $(SCHEMA) -d project
 
+gendocs:
+	$(RUN) gen-doc -d docs/ --include-top-level-diagram --diagram-type er_diagram $(SCHEMA)
+
 python: src/gsvr/datamodel/metamodel.py
 src/gsvr/datamodel/metamodel.py:
 	$(RUN) gen-pydantic $(SCHEMA) > $@.tmp && mv $@.tmp $@
