@@ -20,8 +20,12 @@ types:
   UnitReference:
     typeof: string
 
+subsets:
+  Core:
+
 classes:
   CodeableConcept:
+    in_subset: Core
     description: >-
       A general grouping for any entity that can be catalogued in a vocabulary
     exact_mappings:
@@ -57,6 +61,7 @@ classes:
           place where this concept was sourced from
 
   Variable:
+    in_subset: Core
     is_a: CodeableConcept
     description: >-
       A CodeableConcept that can be used to type any piece of information that varies within and across datasets
@@ -149,6 +154,7 @@ classes:
           - e.g. maximum of
 
   UnitLevelVariable:
+    in_subset: Core
     is_a: Variable
     classification_rules:
       - is_a: Variable
@@ -157,6 +163,7 @@ classes:
             required: true
 
   VariableRelationship:
+    in_subset: Core
     attributes:
       predicate:
         ifabsent: string(related_to)
@@ -165,6 +172,7 @@ classes:
         required: true
 
   VariableCollection:
+    in_subset: Core
     attributes:
       code:
       title:
@@ -201,6 +209,7 @@ classes:
         multivalued: true
 
   QuantityType:
+    in_subset: Core
     is_a: CodeableConcept
   PhysicalEntityOrPhenomena:
     is_a: CodeableConcept
@@ -216,6 +225,7 @@ classes:
     is_a: PhysicalEntity
 
   ValueDomain:
+    in_subset: Core
     is_a: CodeableConcept
     attributes:
       uri:
@@ -229,6 +239,7 @@ classes:
 
 enums:
   VariableCategoryEnum:
+    in_subset: Core
     permissible_values:
       UNSPECIFIED:
         description: the level of specificity is unknown or unspecified

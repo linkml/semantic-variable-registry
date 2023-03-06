@@ -1,0 +1,29 @@
+site_name: "semantic variable registry"
+theme:
+  name: material
+  palette:
+  - media: '(prefers-color-scheme: light)'
+    scheme: default
+    primary: teal
+    accent: amber
+    toggle:
+      icon: material/lightbulb
+      name: Switch to light mode
+  - media: '(prefers-color-scheme: dark)'
+    scheme: slate
+    primary: teal
+    accent: amber
+    toggle:
+      icon: material/lightbulb-outline
+      name: Switch to dark mode
+  features:
+    - content.tabs.link
+plugins:
+  - search
+  - mermaid2:
+      version: 9.3.0
+nav:
+  - Home: home.md
+  - Index: index.md
+site_url: https://linkml.github.io/semantic-variable-registry/
+repo_url: https://github.com/linkml/semantic-variable-registry/

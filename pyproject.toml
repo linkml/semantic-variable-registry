@@ -7,11 +7,12 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-linkml-runtime = "^1.4.5"
+linkml-runtime = "^1.4.8"
 
 [tool.poetry.group.dev.dependencies]
-linkml = "^1.4.4"
+linkml = "^1.4.6"
 linkml-owl = "^0.2.4"
+mkdocs-mermaid2-plugin = "^0.6.0"
 
 [build-system]
 requires = ["poetry-core"]

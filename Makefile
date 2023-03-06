@@ -14,7 +14,7 @@ project: python
 	$(RUN) gen-project $(SCHEMA) -d project
 
 gendocs:
-	$(RUN) gen-doc -d docs/ --include-top-level-diagram --diagram-type er_diagram $(SCHEMA)
+	$(RUN) gen-doc --no-mergeimports -d docs/ --include-top-level-diagram --diagram-type er_diagram $(SCHEMA)
 
 python: src/gsvr/datamodel/metamodel.py
 src/gsvr/datamodel/metamodel.py:
